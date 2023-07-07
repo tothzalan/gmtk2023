@@ -19,7 +19,7 @@ public abstract class AbstractProp : MonoBehaviour
     }
     
     public void ExecuteInteraction()
-    {
+    {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
         if (!CanInteract())
             return;
         gameManager.RemoveMoney(MoneyToRemove);
