@@ -6,14 +6,20 @@ using UnityEngine;
 public abstract class Resource : MonoBehaviour
 {
 
-    private int numberOwned = 0;
+    protected int numberOwned = 0;
 
     public int NumberOwned { get { return numberOwned; } }
 
 
     public virtual void UseResource()
     {
-        numberOwned -= 1;
+        if(CanUseResource())
+            numberOwned -= 1;
+    }
+
+    public void AddAmount(int amount)
+    {
+        numberOwned += amount;
     }
 
     public bool CanUseResource()

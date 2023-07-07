@@ -9,4 +9,10 @@ public class ToxicityResource : Resource
     {
     }
 
+
+    public bool IsDead()
+    {
+        return numberOwned >= 100;
+    }
+
 }
