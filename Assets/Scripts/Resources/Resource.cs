@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public abstract class Resource : MonoBehaviour
+public abstract class Resource
 {
 
     protected int numberOwned = 0;
 
     public int NumberOwned { get { return numberOwned; } }
-
 
     public virtual void UseResource()
     {
@@ -33,3 +32,4 @@ public abstract class Resource : MonoBehaviour
     }
 
 }
+
