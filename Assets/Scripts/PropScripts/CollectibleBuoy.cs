@@ -1,5 +1,4 @@
 using System;
-using System.Security.Cryptography;
 
 namespace PropScripts
 {
@@ -16,7 +15,10 @@ namespace PropScripts
         {
             if (isPlacedByPlayer)
                 return;
+            
             // here add to resources
+            BuoyResource.GetInstance().AddAmount(1);
+            mapGenerator.buoyCount++;
             
             FinalizeNeutralization();
             Destroy(gameManager);

@@ -35,10 +35,10 @@ public class MapGenerator : MonoBehaviour
 
     private const int platformLength = 20;
 
-    private int policeCount = 0;
+    public int policeCount = 0;
 
-    private int buoyCount = 0;
-    private int storeBlackoutCount = 0;
+    public int buoyCount = 0;
+    public int storeBlackoutCount = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -59,7 +59,35 @@ public class MapGenerator : MonoBehaviour
         }
     }
 
-    public void PlacePlatform()
+    public void ReloadPlatforms()
+    {
+        var activePlatforms = GameObject.FindGameObjectsWithTag("Platform");
+
+        for (int i = 0; i < activePlatforms.Length; i++)
+        {
+            Destroy(activePlatforms[i]);
+        }
+
+        var activeProps = GameObject.FindGameObjectsWithTag("Prop");
+        
+        for (int i = 0; i < activeProps.Length; i++)
+        {
+            Destroy(activeProps[i]);
+        }
+
+        lastPlatformX = -platformLength;
+        
+        playerPos.position = Vector3.zero;
+    }
+
+    public void ReloadFromBus()
+    {
+        ReloadPlatforms();
+        
+        // TODO: add bus spawn and stop spawn to spawn point aka: 0, 0, 0
+    }
+
+    private void PlacePlatform()
     {
         GameObject selected = platforms[rand.Next(platforms.Count)];
         lastPlatformX += platformLength;
@@ -103,7 +131,7 @@ public class MapGenerator : MonoBehaviour
     /// </summary>
     /// <param name="pointInterest">The interest map</param>
     /// <returns>the index of the prop in the interest list, or -1 if nothing</returns>
-    public int CalculatePropToSpawn(PointOfInterest pointInterest)
+    private int CalculatePropToSpawn(PointOfInterest pointInterest)
     {
         double[] ch = new double[interestProps.Count];
         int d = 0;

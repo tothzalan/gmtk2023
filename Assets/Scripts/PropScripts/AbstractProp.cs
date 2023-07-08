@@ -7,6 +7,7 @@ using UnityEngine;
 public abstract class AbstractProp : MonoBehaviour
 {
     protected GameManager gameManager;
+    protected MapGenerator mapGenerator;
 
     [NonSerialized]
     public bool hasNeutralized;
@@ -14,17 +15,18 @@ public abstract class AbstractProp : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
+        mapGenerator = GameObject.FindWithTag("GameController").GetComponent<MapGenerator>();
         TriggerStart();
     }
     private void OnMouseUpAsButton()
     {
+        if (!CanInteract())
+            return;
         AttemptNeutralize();
     }
 
     public virtual void ExecuteInteraction()
-    {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-        if (!CanInteract())
-            return;
+    {
         gameManager.RemoveMoney(MoneyToRemove);
         gameManager.AddToxicity(ToxicityDifference);
         gameManager.AddScore(ScoreDifference);
