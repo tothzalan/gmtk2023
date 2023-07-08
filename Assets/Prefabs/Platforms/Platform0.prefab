@@ -4629,7 +4629,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1346034961
-  m_SortingLayer: 0
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -4652,7 +4652,7 @@ GameObject:
   - component: {fileID: 6580083390251214351}
   m_Layer: 0
   m_Name: Platform0
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4877,6 +4877,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4393158277062307174, guid: f58f97acc5d0e224796d32df8d26016c, type: 3}
       propertyPath: wetFloorSpot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393158277062307174, guid: f58f97acc5d0e224796d32df8d26016c, type: 3}
+      propertyPath: collectibleBuoySpot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393158277062307174, guid: f58f97acc5d0e224796d32df8d26016c, type: 3}
+      propertyPath: collectiblePoliceSpot
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393158277062307174, guid: f58f97acc5d0e224796d32df8d26016c, type: 3}
+      propertyPath: collectibleStoreBlackout
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
