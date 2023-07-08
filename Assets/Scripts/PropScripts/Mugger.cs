@@ -12,19 +12,19 @@ public class Mugger : AbstractProp
 
     public override bool CanInteract() 
     {
+        Debug.Log($"CanInteract: {gameManager.inventoryManager.UsingCurrently == ResourceType.Police} {gameManager.inventoryManager.UsingCurrently}");
         return gameManager.inventoryManager.UsingCurrently == ResourceType.Police;
     }
 
     public override void AttemptNeutralize()
     {
-        
+        gameManager.inventoryManager.UsingCurrently = ResourceType.None;
+        Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
         if(col.tag == "Player")
-        {
             ExecuteInteraction();
-        }
     }
 }
