@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    private static bool isPaused = false;
+    private bool isPaused = false;
+    public GameManager gameManager;
     public GameObject pauseMenuUI;
     void Update()
     {
@@ -28,6 +29,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
+        gameManager.isPaused = this.isPaused;
     }
 
     public void Resume()
@@ -35,6 +37,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+        gameManager.isPaused = this.isPaused;
     }
 
     public void LoadMainMenu()

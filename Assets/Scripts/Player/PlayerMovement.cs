@@ -41,36 +41,38 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = new Vector2(0.0f, 0.0f);
             }
         }
-
     }
 
     void OnTriggerEnter2D(Collider2D col){
         var colTag = col.tag;
         //Debug.Log("Fasz vagy");
-        if(colTag == "EnterCol")
+        if(!dead)
         {
-            isCollided = true;
-            rb.velocity = new Vector2(((gm.SpeedMultiplier+1) * 0.1f), -0.8f);
-            GameObject car = Instantiate(carPrefab) as GameObject;
-            //Debug.Log(car.position.x);
-            car.transform.position = new Vector2(xAxisPlayer+2, 0.0f);            
-        }
-        else if(colTag == "StayCol")
-        {
-            isCollided = true;
-            rb.velocity = new Vector2(((gm.SpeedMultiplier+1) * 0.1f), 0.0f);
-        }
-        else if(colTag == "ExitCol")
-        {
-            isCollided = true;
-            rb.velocity = new Vector2(((gm.SpeedMultiplier+1) * 0.1f), 0.8f);
-        }
-        else if(colTag == "Car")
-        {
-            // TODO: play cool death animation
-            rb.velocity = new Vector2(0, 0);
-            gm.Dead = true;
-            dead = true;
+            if(colTag == "EnterCol")
+            {
+                isCollided = true;
+                rb.velocity = new Vector2(((gm.SpeedMultiplier+1) * 0.1f), -0.8f);
+                GameObject car = Instantiate(carPrefab) as GameObject;
+                //Debug.Log(car.position.x);
+                car.transform.position = new Vector2(xAxisPlayer+2, 0.0f);            
+            }
+            else if(colTag == "StayCol")
+            {
+                isCollided = true;
+                rb.velocity = new Vector2(((gm.SpeedMultiplier+1) * 0.1f), 0.0f);
+            }
+            else if(colTag == "ExitCol")
+            {
+                isCollided = true;
+                rb.velocity = new Vector2(((gm.SpeedMultiplier+1) * 0.1f), 0.8f);
+            }
+            else if(colTag == "Car")
+            {
+                // TODO: play cool death animation
+                rb.velocity = new Vector2(0, 0);
+                gm.Dead = true;
+                dead = true;
+            }
         }
     }
     
