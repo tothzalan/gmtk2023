@@ -11,8 +11,11 @@ public class GameManager : MonoBehaviour
     private int toxicity;
     public int Toxicity { get { return toxicity; } }
 
+    [SerializeField]
     private int ctl = 0;
+    [SerializeField]
     private int score = 0;
+    
     public int Score { get { return score; } }
 
     private bool isDeadFlag = false;
@@ -24,6 +27,7 @@ public class GameManager : MonoBehaviour
     }
 
     private double ScoreMultiplier => (double)score / 100; // score reward/punishment should go up according
+    public float SpeedMultiplier => (float)score / 100; // for speed multi 
 
     // Update is called once per frame
     void Update()
@@ -33,7 +37,7 @@ public class GameManager : MonoBehaviour
         ctl++;
         if (ctl == 60)
         {
-            AddScore(5); // score per sec here
+            AddScore(2); // score per sec here
             ctl = 0;
         }
     }

@@ -19,16 +19,16 @@ public class InventoryItemHandler : MonoBehaviour
         switch(resourceType)
         {
             case ResourceType.Buoy:
-                resource = new BuoyResource(5);
+                resource = BuoyResource.Init(5);
                 break;
             case ResourceType.Water:
-                resource = new WaterResource(7);
+                resource = WaterResource.Init(7);
                 break;
             case ResourceType.Police:
-                resource = new PoliceResource(1);
+                resource = PoliceResource.Init(1);
                 break;
             case ResourceType.Blackout:
-                resource = new BlackoutResource(10);
+                resource = BlackoutResource.Init(10);
                 break;
         }
         amountText = GetComponentsInChildren<TextMeshProUGUI>()[0];

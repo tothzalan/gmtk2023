@@ -7,6 +7,9 @@ using UnityEngine;
 public abstract class AbstractProp : MonoBehaviour
 {
     protected GameManager gameManager;
+
+    [NonSerialized]
+    public bool hasNeutralized;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +20,7 @@ public abstract class AbstractProp : MonoBehaviour
     {
         AttemptNeutralize();
     }
-    
+
     public void ExecuteInteraction()
     {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
         if (!CanInteract())
@@ -25,6 +28,11 @@ public abstract class AbstractProp : MonoBehaviour
         gameManager.RemoveMoney(MoneyToRemove);
         gameManager.AddToxicity(ToxicityDifference);
         gameManager.AddScore(ScoreDifference);
+    }
+
+    public void FinalizeNeutralization()
+    {
+        hasNeutralized = true;
     }
 
     protected virtual void TriggerStart()
