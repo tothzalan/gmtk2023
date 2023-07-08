@@ -30,7 +30,10 @@ public class CarMovement : MonoBehaviour
             else if(spawnPos.y < -2){
                 rb.velocity = new Vector2(0.0f, ySpeed);
                 transform.localScale = new Vector2(transform.localScale.x, scaleY);
-            }        
+            }else if(spawnPos.y == 0.5){
+                rb.velocity = new Vector2(15.0f, 0.0f);
+                transform.localScale = new Vector2(transform.localScale.x, scaleY);
+            }    
         }
     }
 

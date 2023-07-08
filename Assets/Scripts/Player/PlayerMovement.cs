@@ -8,11 +8,13 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     private float horizontal;
     private bool isCollided;
+    
+    public GameObject carPrefab;
     //private float speed = 8f;
 
     private Rigidbody2D rb;
     private GameManager gm;
-    private CarMovement cm;
+    //private CarMovement cm;
     //private Spawner spawn;
 
     public float xAxisPlayer;
@@ -25,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         gm = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
       //spawn = GameObject.FindWithTag("SpawnTag").GetComponent<Spawner>();
-        cm = GameObject.FindWithTag("Car").GetComponent<CarMovement>();
+        //cm = GameObject.FindWithTag("Car").GetComponent<CarMovement>();
     }
 
     private void FixedUpdate(){
@@ -45,24 +47,30 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("Fasz vagy");
         if(a == "EnterCol"){
             isCollided = true;
-            rb.velocity = new Vector2(((gm.SpeedMultiplier+1) * 0.1f), -1.0f);
+            rb.velocity = new Vector2(((gm.SpeedMultiplier+1) * 0.1f), -0.8f);
+            GameObject car = Instantiate(carPrefab) as GameObject;
+            //Debug.Log(car.position.x);
+            car.transform.position = new Vector2(xAxisPlayer+2, 0.0f);            
         }else if(a == "StayCol"){
             isCollided = true;
             rb.velocity = new Vector2(((gm.SpeedMultiplier+1) * 0.1f), 0.0f);
         }else if(a == "ExitCol"){
             isCollided = true;
-            rb.velocity = new Vector2(((gm.SpeedMultiplier+1) * 0.1f), 1.0f);
+            rb.velocity = new Vector2(((gm.SpeedMultiplier+1) * 0.1f), 0.8f);
         }
     }
     
     void OnTriggerExit2D(Collider2D col){
-        var a = col.tag;
-        
+        var a = col.tag;       
         if(a == "EnterCol"){
-            //Instantiate(cm, new Vector3(xAxisPlayer+2, ySpawn, 0));
+            isCollided = false;
+            Debug.Log("Faszszopo vagy");
+
         }else if(a == "ExitCol"){
             isCollided = false;
             rb.velocity = new Vector2(((gm.SpeedMultiplier+1) * 0.1f), 0.0f);
+        }else if(a == "StayCool"){
+            isCollided = false;
         }
     }
 }
