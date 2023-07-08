@@ -5,7 +5,7 @@ using UnityEngine;
 public class PointOfInterest : MonoBehaviour
 {
     public bool dealerPoint; // police neut
-    public bool hookerPoint; // 
+    public bool muggerPoint; // 
     public bool trafficLightSpot; //
     public bool carSpot; // buoy neut
     public bool kebabSpot; // blackout neut (if opened)

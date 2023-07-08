@@ -1,6 +1,5 @@
 #nullable enable
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -16,7 +15,7 @@ public class MapGenerator : MonoBehaviour
     /// 3. pub
     /// 4. kebab
     /// 5. dealer
-    /// 6. hooker
+    /// 6. mugger
     /// 7. traffic light
     /// 8. bus station
     /// 9. walk on road (timed car coming)
@@ -154,8 +153,8 @@ public class MapGenerator : MonoBehaviour
         if(pointInterest.dealerPoint && policeCount > 0)
             ch[d] = chances.dealer;
         d++;
-        if(pointInterest.hookerPoint)
-            ch[d] = chances.hooker;
+        if(pointInterest.muggerPoint)
+            ch[d] = chances.mugger;
         d++;
         if(pointInterest.trafficLightSpot)
             ch[d] = chances.trafficLight;
@@ -199,7 +198,7 @@ public class InterestSpawnChanceMap
     [Range(0,1)]
     public double dealer;
     [Range(0,1)]
-    public double hooker;
+    public double mugger;
     [Range(0,1)]
     public double pub;
     [Range(0,1)]

@@ -118,6 +118,7 @@ MonoBehaviour:
   score: 0
   InventoryManagerGameObject: {fileID: 4626809466035797359, guid: f09ebe9ed2a551da4af816ace2c5bd36, type: 3}
   inventoryManager: {fileID: 4928130175475976664, guid: f09ebe9ed2a551da4af816ace2c5bd36, type: 3}
+  playerPos: {fileID: 0}
 --- !u!114 &4149098813892110924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,12 +137,12 @@ MonoBehaviour:
   - {fileID: 8753950460620836393, guid: fbd40fa8450fb6b4883dde4a2cf83fea, type: 3}
   interestProps:
   - {fileID: 42452895410824446, guid: 973f967f824c91642ac0fd57f2c0867e, type: 3}
-  - {fileID: 0}
+  - {fileID: 2999724338225715500, guid: 32006fe903dc7b742ba9e1300f4d7058, type: 3}
   - {fileID: 0}
   - {fileID: 6100436417626677973, guid: 0a899594b1a894947af47f686909c27e, type: 3}
   - {fileID: 6100436417626677973, guid: 57ab089011470694b9705a371728ee7e, type: 3}
   - {fileID: 8076659721847318663, guid: 38d84de297ee33746aeca6705f33fc83, type: 3}
-  - {fileID: 0}
+  - {fileID: 3498076622752758570, guid: aaed6f32dc46e792fab6a3d7d44566a1, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -151,7 +152,7 @@ MonoBehaviour:
     policeCollectible: 1
     storeBlackoutCollectible: 1
     dealer: 1
-    hooker: 1
+    mugger: 0
     pub: 1
     kebab: 1
     trafficLight: 1
