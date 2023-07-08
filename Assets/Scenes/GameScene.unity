@@ -520,6 +520,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94745b9c6e6bec8ca8f339214f300bf0, type: 3}
+--- !u!95 &1110958911 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6402927880322970598, guid: d95055125fe65374f972198f6511a6db, type: 3}
+  m_PrefabInstance: {fileID: 1682275452}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1399056993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -665,6 +670,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 850722047
       objectReference: {fileID: 0}
+    - target: {fileID: 5500966078413544527, guid: d95055125fe65374f972198f6511a6db, type: 3}
+      propertyPath: animation
+      value: 
+      objectReference: {fileID: 1110958911}
     - target: {fileID: 8004166253386679528, guid: d95055125fe65374f972198f6511a6db, type: 3}
       propertyPath: m_Name
       value: Player2D

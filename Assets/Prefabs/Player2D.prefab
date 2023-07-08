@@ -205,6 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84605376ed50432478e62116d1137d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animation: {fileID: 6402927880322970598}
   carPrefab: {fileID: 4801489714790769769, guid: 59ff5e85c2db7da46bcc9bbee38c09ad, type: 3}
   xAxisPlayer: 0
   ySpawn: 0
