@@ -34,6 +34,11 @@ public abstract class AbstractProp : MonoBehaviour
     {
         hasNeutralized = true;
     }
+    
+    public void Destroy()
+    {
+        Destroy(gameObject);
+    }
 
     protected virtual void TriggerStart()
     {

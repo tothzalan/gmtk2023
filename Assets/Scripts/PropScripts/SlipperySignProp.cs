@@ -1,16 +1,26 @@
+using System;
+using UnityEngine;
+
 namespace PropScripts
 {
     public class SlipperySignProp : AbstractProp
     {
-        public bool hasRemoved;
+        private Animator animator;
+        private static readonly int IsDestroyed = Animator.StringToHash("IsDestroyed");
+
+        protected override void TriggerStart()
+        {
+            animator = gameManager.GetComponent<Animator>();
+        }
+
         public override bool CanInteract()
         {
-            return !hasRemoved;
+            return !animator.GetBool(IsDestroyed);
         }
 
         public override void AttemptNeutralize()
         {
-            hasRemoved = true;
+            animator.SetBool(IsDestroyed, true);
         }
 
         public override int MoneyToRemove { get; }

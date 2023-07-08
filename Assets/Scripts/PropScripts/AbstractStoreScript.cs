@@ -25,6 +25,10 @@ namespace PropScripts
             return !hasChanged;
         }
 
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+        }
+
         public override void AttemptNeutralize()
         {
             if (hasChanged)
