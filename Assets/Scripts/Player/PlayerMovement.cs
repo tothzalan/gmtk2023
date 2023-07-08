@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate(){
         if(triggerEvent == false){
-            rb.velocity = new Vector2(2.0f, 0.0f);
+            rb.velocity = new Vector2((Time.frameCount * 0.001f) * 2.0f, 0.0f);
         }else{
             rb.velocity = new Vector2(0.0f, 0.0f);
         }

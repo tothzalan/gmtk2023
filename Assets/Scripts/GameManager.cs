@@ -5,12 +5,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int money;
+    private int money;
+    public int Money { get { return money; } }
 
-    public int toxicity;
+    private int toxicity;
+    public int Toxicity { get { return toxicity; } }
 
     private int ctl = 0;
-    public int score = 0;
+    private int score = 0;
+    public int Score { get { return score; } }
 
     private bool isDeadFlag = false;
 
