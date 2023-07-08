@@ -5,8 +5,6 @@ namespace Enums
         Buoy,
         Water,
         Police,
-        Blackout,
-        Money,
-        Toxicity
+        Blackout
     }
 }

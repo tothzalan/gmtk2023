@@ -10,8 +10,7 @@ public abstract class AbstractProp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject manager = GameObject.FindWithTag("GameController"); // TODO game controller object
-        gameManager = manager.GetComponent<GameManager>();
+        gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
         TriggerStart();
     }
     private void OnMouseUpAsButton()
@@ -20,18 +19,22 @@ public abstract class AbstractProp : MonoBehaviour
     }
     
     public void ExecuteInteraction()
-    {
-        gameManager.AddMoney(MoneyDifference);
+    {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+        if (!CanInteract())
+            return;
+        gameManager.RemoveMoney(MoneyToRemove);
         gameManager.AddToxicity(ToxicityDifference);
+        gameManager.AddScore(ScoreDifference);
     }
 
     protected virtual void TriggerStart()
     {
         
     }
-    public abstract void AttemptNeutralize();
-    public abstract int MoneyDifference { get; }
-    public abstract int ToxicityDifference { get; }
 
-    
+    public abstract bool CanInteract();
+    public abstract void AttemptNeutralize();
+    public abstract int MoneyToRemove { get; }
+    public abstract int ToxicityDifference { get; }
+    public abstract int ScoreDifference { get; }
 }

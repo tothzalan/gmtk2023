@@ -1,3 +1,4 @@
+using System;
 using Enums;
 using UnityEngine;
 
@@ -5,16 +6,21 @@ namespace PropScripts
 {
     public abstract class AbstractStoreScript : AbstractProp
     {
-        private Collider2D collider;
-        // Update is called once per frame
-
-        private ShopStatus status;
+        private ShopStatus status = ShopStatus.Open;
     
         public bool hasChanged;
+
         protected override void TriggerStart()
         {
-            collider = gameObject.GetComponent<Collider2D>();
-            
+            System.Random rand = new System.Random();
+
+            if (rand.Next(4) == 0)
+                status = ShopStatus.Closed;
+        }
+
+        public override bool CanInteract()
+        {
+            return status == ShopStatus.Open;
         }
 
         public override void AttemptNeutralize()

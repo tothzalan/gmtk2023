@@ -2,12 +2,19 @@ namespace PropScripts
 {
     public class SlipperySignProp : AbstractProp
     {
-        public override void AttemptNeutralize()
+        public bool hasRemoved;
+        public override bool CanInteract()
         {
-            throw new System.NotImplementedException();
+            return !hasRemoved;
         }
 
-        public override int MoneyDifference { get; }
+        public override void AttemptNeutralize()
+        {
+            hasRemoved = true;
+        }
+
+        public override int MoneyToRemove { get; }
         public override int ToxicityDifference { get; }
+        public override int ScoreDifference { get; } = -50;
     }
 }
