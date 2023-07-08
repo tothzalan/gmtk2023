@@ -20,8 +20,8 @@ public class BuoyResource : Resource
 
     public static BuoyResource Init(int numberOwned)
     {
-        if(instance != null)
-            throw new InvalidOperationException("You have already initialized the Singleton");
+        if (instance != null)
+            return instance;
         instance = new BuoyResource(numberOwned);
         return instance;
     }

@@ -20,8 +20,8 @@ public class BlackoutResource : Resource
 
     public static BlackoutResource Init(int numberOwned)
     {
-        if(instance != null)
-            throw new InvalidOperationException("You have already initialized the Singleton");
+        if (instance != null)
+            return instance;
         instance = new BlackoutResource(numberOwned);
         return instance;
     }
