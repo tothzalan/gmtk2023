@@ -30,6 +30,14 @@ public abstract class AbstractProp : MonoBehaviour
         gameManager.AddScore(ScoreDifference);
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("PlatformDestroy"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
     public void FinalizeNeutralization()
     {
         hasNeutralized = true;

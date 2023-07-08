@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private GameManager gm;
     private CarMovement cm;
-    private Spawner spawn;
+    //private Spawner spawn;
 
     public float xAxisPlayer;
     public bool triggerEvent;
@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
         triggerEvent = false;
         rb = gameObject.GetComponent<Rigidbody2D>();
         gm = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
-        spawn = GameObject.FindWithTag("SpawnTag").GetComponent<Spawner>();
+      //  spawn = GameObject.FindWithTag("SpawnTag").GetComponent<Spawner>();
     }
 
     private void FixedUpdate(){
