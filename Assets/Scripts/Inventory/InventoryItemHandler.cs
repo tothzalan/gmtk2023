@@ -49,5 +49,11 @@ public class InventoryItemHandler : MonoBehaviour
             amountText.text = resource.NumberOwned.ToString();
             inventoryManager.UsingCurrently = resourceType;
         }
+        else if(inventoryManager.UsingCurrently == resourceType)
+        {
+            resource.AddAmount(1);
+            amountText.text = resource.NumberOwned.ToString();
+            inventoryManager.UsingCurrently = ResourceType.None;
+        }
     }
 }
