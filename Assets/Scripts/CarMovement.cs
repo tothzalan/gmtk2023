@@ -23,7 +23,6 @@ public class CarMovement : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D col){
-        Debug.Log(col.tag);
         if(col.tag == "Player")
             speed = 0;
     }
