@@ -1,15 +1,17 @@
+using Enums;
+
 namespace PropScripts
 {
     public class DealerProp : AbstractProp
     {
         public override bool CanInteract()
         {
-            
+            return gameManager.inventoryManager.UsingCurrently == ResourceType.Police;
         }
 
         public override void AttemptNeutralize()
         {
-            throw new System.NotImplementedException();
+            
         }
 
         public override int MoneyToRemove { get; } = 50;
