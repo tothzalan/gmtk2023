@@ -19,7 +19,7 @@ public abstract class AbstractProp : MonoBehaviour, IPointerClickHandler
         mapGenerator = GameObject.FindWithTag("GameController").GetComponent<MapGenerator>();
         TriggerStart();
     }
-    
+
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button != PointerEventData.InputButton.Left || !CanInteract())
