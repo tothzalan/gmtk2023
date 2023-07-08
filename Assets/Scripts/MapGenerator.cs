@@ -1,3 +1,4 @@
+#nullable enable
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ public class MapGenerator : MonoBehaviour
     private Transform playerPos;
     private System.Random rand = new ();
 
-    private float lastPlatformX;
+    private float lastPlatformX = -platformLength;
 
     private const int platformLength = 20;
 
@@ -44,17 +45,15 @@ public class MapGenerator : MonoBehaviour
     {
         manager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
         playerPos = GameObject.FindWithTag("Player").transform;
-        for (int i = 0; i < 4; i++)
-        {
-            PlacePlatform();
-        }
+        PlacePlatform();
+        PlacePlatform();
     }
 
     // Update is called once per frame
     void Update()
     {
         float playerX = playerPos.position.x;
-        if (playerX > lastPlatformX - platformLength * 3)
+        if (playerX > lastPlatformX - platformLength)
         {
             PlacePlatform();
         }
@@ -69,8 +68,10 @@ public class MapGenerator : MonoBehaviour
         for (int i = 0; i < selected.transform.childCount; i++)
         {
             GameObject interestPoint = selected.transform.GetChild(i).gameObject;
-            PointOfInterest obj = interestPoint.GetComponent<PointOfInterest>();
+            PointOfInterest? obj = interestPoint.GetComponent<PointOfInterest>();
 
+            if(obj == null)
+                continue;
             int ind = CalculatePropToSpawn(obj);
 
             if (ind != -1)
@@ -103,36 +104,48 @@ public class MapGenerator : MonoBehaviour
     /// <returns>the index of the prop in the interest list, or -1 if nothing</returns>
     public int CalculatePropToSpawn(PointOfInterest pointInterest)
     {
-        List<double> ch = new List<double>(); 
-            
+        double[] ch = new double[interestProps.Count];
+        int d = 0;
         if(pointInterest.collectibleBuoySpot)
-            ch.Add(chances.douyCollectible);
+            ch[d] = chances.douyCollectible;
+        d++;
         if(pointInterest.collectiblePoliceSpot)
-            ch.Add(chances.policeCollectible);
+            ch[d] = chances.policeCollectible;
+        d++;
         if(pointInterest.collectibleStoreBlackout)
-            ch.Add(chances.storeBlackoutCollectible);
+            ch[d] = chances.storeBlackoutCollectible;
+        d++;
         if(pointInterest.pubSpot && storeBlackoutCount > 0)
-            ch.Add(chances.pub);
+            ch[d] = chances.pub;
+        d++;
         if(pointInterest.kebabSpot && storeBlackoutCount > 0)
-            ch.Add(chances.kebab);
+            ch[d] = chances.kebab;
+        d++;
         if(pointInterest.dealerPoint && policeCount > 0)
-            ch.Add(chances.dealer);
+            ch[d] = chances.dealer;
+        d++;
         if(pointInterest.hookerPoint)
-            ch.Add(chances.hooker);
+            ch[d] = chances.hooker;
+        d++;
         if(pointInterest.trafficLightSpot)
-            ch.Add(chances.trafficLight);
+            ch[d] = chances.trafficLight;
+        d++;
         if(pointInterest.busStationSpot)
-            ch.Add(chances.busStation);
+            ch[d] = chances.busStation;
+        d++;
         if(pointInterest.walkOnRoadSpot && buoyCount > 0)
-            ch.Add(chances.walkOnRoad);
+            ch[d] = chances.walkOnRoad;
+        d++;
         if(pointInterest.wetFloorSpot)
-            ch.Add(chances.wetFloor);
+            ch[d] = chances.wetFloor;
+        d++;
         if(pointInterest.blackOutSpot)
-            ch.Add(chances.blackout);
+            ch[d] = chances.blackout;
+        d++;
 
-        double chance = rand.NextDouble() * ch.Count;
+        double chance = rand.NextDouble() * ch.Length;
 
-        for (int i = 0; i < ch.Count; i++)
+        for (int i = 0; i < ch.Length; i++)
         {
             if (ch[i] < chance)
                 return i;

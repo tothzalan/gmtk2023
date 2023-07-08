@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6a9ae557419b67499334210032cd14f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ctl: 0
+  score: 0
 --- !u!114 &4149098813892110924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,7 +59,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27d1b47e63f517d449fefde431053fbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platforms: []
+  platforms:
+  - {fileID: 8753950460620836393, guid: 6b78b56b4982b414d8532e6247b79108, type: 3}
   interestProps:
   - {fileID: 42452895410824446, guid: 973f967f824c91642ac0fd57f2c0867e, type: 3}
   - {fileID: 0}
@@ -69,7 +72,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7376368150902203947, guid: 57a83aaf5d6920142b7730c53f6c0145, type: 3}
   chances:
     douyCollectible: 0
     policeCollectible: 0

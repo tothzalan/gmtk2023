@@ -45,5 +45,12 @@ namespace PropScripts
             
             FinalizeNeutralization();
         }
+
+        public override void ExecuteInteraction()
+        {
+            if (gameManager.IsBlackOut)
+                return;
+            base.ExecuteInteraction();
+        }
     }
 }

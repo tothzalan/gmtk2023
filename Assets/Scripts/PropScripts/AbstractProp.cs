@@ -21,7 +21,7 @@ public abstract class AbstractProp : MonoBehaviour
         AttemptNeutralize();
     }
 
-    public void ExecuteInteraction()
+    public virtual void ExecuteInteraction()
     {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
         if (!CanInteract())
             return;
