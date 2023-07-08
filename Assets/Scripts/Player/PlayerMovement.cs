@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private GameManager gm;
+    private CarMovement cm;
 
     public bool triggerEvent;
 
@@ -21,19 +22,28 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //rb.AddForce(new Vector2(0,1));
-        
-        
-    }
-
     private void FixedUpdate(){
         if(triggerEvent == false){
-            rb.velocity = new Vector2((gm.ScoreMultiplier+1)* 2.0f, 0.0f);
+            rb.velocity = new Vector2(((gm.SpeedMultiplier+1) * 0.1f), 0.0f);
         }else{
             rb.velocity = new Vector2(0.0f, 0.0f);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D col){
+        var a = col.tag;
+        if(a == "EnterCol"){
+            rb.velocity = new Vector2(((gm.SpeedMultiplier+1) * 0.1f), 1.0f);
+        }else if(a == "StayCol"){
+            rb.velocity = new Vector2(((gm.SpeedMultiplier+1) * 0.1f), 0.0f);
+        }else if(a == "ExitCol"){
+            rb.velocity = new Vector2(((gm.SpeedMultiplier+1) * 0.1f), -1.0f);
+        }
+    }
+    void OnTriggerExit2D(Collider2D col){
+        var a = col.tag;
+        if(a == "EnterCol"){
+
         }
     }
 }
