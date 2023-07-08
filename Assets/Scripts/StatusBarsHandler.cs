@@ -20,9 +20,9 @@ public class StatusBarsHandler : MonoBehaviour
 
     void Update()
     {
-        score.text = gameManager.score.ToString();
-        FormatToxicity(gameManager.toxicity);
-        FormatMoney(gameManager.money);
+        score.text = gameManager.Score.ToString();
+        FormatToxicity(gameManager.Toxicity);
+        FormatMoney(gameManager.Money);
     }
 
     private void FormatToxicity(int amount)
