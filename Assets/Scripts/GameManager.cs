@@ -23,10 +23,14 @@ public class GameManager : MonoBehaviour
 
     private readonly System.Random rand = new ();
 
+    [SerializeField]
+    public GameObject InventoryManagerGameObject;
+    private InventoryManager inventoryManager;
+
     // Start is called before the first frame update
     void Start() // This should only exist when the actual game loads, not on menu
     {
-        
+        inventoryManager = InventoryManagerGameObject.GetComponent<InventoryManager>();
     }
 
     private double ScoreMultiplier => (double)score / 100; // score reward/punishment should go up according

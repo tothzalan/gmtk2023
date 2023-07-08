@@ -3,22 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnerScript : MonoBehaviour
-{   
+{  
+    /* 
     [SerializeField]
     public GameObject objPrefab;
 
-    //[SerializeField]
-    //public float;
+    [SerializeField]
+    public float;
 
-    //[SerializeField]
-   // public SpawnerY;
+    [SerializeField]
+    public SpawnerY;
 
     private PlayerMovement player;
 
 
 
     void Start(){
-        //SpawnerY = 0;
+        SpawnerY = 0;
         player = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
     }
 
@@ -26,10 +27,11 @@ public class SpawnerScript : MonoBehaviour
     void Update()
     {
         //Vector3 spawnVector = new Vector3(player.xAxisPlayer+2, SpawnerY ,0);
-        //Instantiate(objPrefab, spawnVector, Quaternion.identity);
+        //Instantiate(objPrefab, spawnVector);
     }
 
     void SpawnObject(){
-        GameObject newObject = Instantiate(objPrefab);
-    }
+        Vector3 spawnVector = new Vector3(player.xAxisPlayer+2, SpawnerY ,0);
+        Instantiate(objPrefab, spawnVector); 
+    }*/
 }

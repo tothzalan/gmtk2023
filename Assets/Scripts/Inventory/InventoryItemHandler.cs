@@ -13,9 +13,14 @@ public class InventoryItemHandler : MonoBehaviour
 
     private TextMeshProUGUI amountText;
 
+    [SerializeField]
+    public GameObject inventoryManagerGameObject;
+    private InventoryManager inventoryManager;
+
     // Start is called before the first frame update
     void Start()
     {
+        inventoryManager = inventoryManagerGameObject.GetComponent<InventoryManager>();
         switch(resourceType)
         {
             case ResourceType.Buoy:
@@ -37,10 +42,18 @@ public class InventoryItemHandler : MonoBehaviour
 
     void OnMouseDown()
     {
-        if(resource.CanUseResource())
+        if( resource.CanUseResource()
+            && inventoryManager.UsingCurrently == ResourceType.None)
         {
             resource.UseResource();
             amountText.text = resource.NumberOwned.ToString();
+            inventoryManager.UsingCurrently = resourceType;
+        }
+        else if(inventoryManager.UsingCurrently == resourceType)
+        {
+            resource.AddAmount(1);
+            amountText.text = resource.NumberOwned.ToString();
+            inventoryManager.UsingCurrently = ResourceType.None;
         }
     }
 }
