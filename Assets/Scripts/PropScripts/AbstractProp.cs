@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using PropScripts;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public abstract class AbstractProp : MonoBehaviour
+public abstract class AbstractProp : MonoBehaviour, IPointerClickHandler
 {
     protected GameManager gameManager;
     protected MapGenerator mapGenerator;
@@ -18,9 +19,10 @@ public abstract class AbstractProp : MonoBehaviour
         mapGenerator = GameObject.FindWithTag("GameController").GetComponent<MapGenerator>();
         TriggerStart();
     }
-    private void OnMouseUpAsButton()
+    
+    public void OnPointerClick(PointerEventData eventData)
     {
-        if (!CanInteract())
+        if (eventData.button != PointerEventData.InputButton.Left || !CanInteract())
             return;
         AttemptNeutralize();
     }
