@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public bool isPaused;
     private int money;
     public int Money { get { return money; } }
 
@@ -25,8 +26,8 @@ public class GameManager : MonoBehaviour
     private readonly System.Random rand = new ();
 
     [SerializeField]
-    public GameObject InventoryManagerGameObject;
-    private InventoryManager inventoryManager;
+    private GameObject InventoryManagerGameObject;
+    public InventoryManager inventoryManager;
 
     // Start is called before the first frame update
     void Start() // This should only exist when the actual game loads, not on menu
@@ -77,7 +78,10 @@ public class GameManager : MonoBehaviour
 
     public void AddScore(int amount)
     {
-        score += (int)(amount * (1 + ScoreMultiplier));
+        if (!isPaused)
+        {
+            score += (int)(amount * (1 + ScoreMultiplier));
+        }
     }
 
 }
