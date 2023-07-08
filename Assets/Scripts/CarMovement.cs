@@ -8,7 +8,6 @@ public class CarMovement : MonoBehaviour
     private Vector2 spawnPos;
     public Rigidbody2D rigidBody;
     public float speed = 5.0f;
-    private bool atTrafficStop = false;
 
     // Start is called before the first frame update
     void Start()
@@ -20,14 +19,13 @@ public class CarMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(!atTrafficStop)
-            rigidBody.velocity = new Vector2(speed, 0);
+        rigidBody.velocity = new Vector2(speed, 0);
     }
 
     void OnTriggerEnter2D(Collider2D col){
+        Debug.Log(col.tag);
         if(col.tag == "Player")
             speed = 0;
-  
     }
 
 }
