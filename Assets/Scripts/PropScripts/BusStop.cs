@@ -6,11 +6,12 @@ using PropScripts;
 public class BusStopScript : AbstractProp
 {
     public GameObject busPrefab;
-    private Vector2 spawnPos;
+    public Vector2 spawnPos;
     // Start is called before the first frame update
     void Start()
     {
-        spawnPos = transform.position; 
+        spawnPos = transform.position;
+         
     }
 
     // Update is called once per frame
@@ -20,13 +21,18 @@ public class BusStopScript : AbstractProp
     }
 
     public override bool CanInteract(){
-        return true;
+        if((gameManager.playerPos.xAxisPlayer - spawnPos.x) < 10){
+            return true;
+        }else{
+            return false;
+        }
+        
     }
 
     public override void AttemptNeutralize(){
         //TODO: Regenerate Map
         GameObject bus = Instantiate(busPrefab) as GameObject;
-        bus.transform.position = new Vector2((spawnPos.x-10), spawnPos.y);
+        bus.transform.position = new Vector2((spawnPos.x-10), spawnPos.y-1.5f);
         
     }
 
