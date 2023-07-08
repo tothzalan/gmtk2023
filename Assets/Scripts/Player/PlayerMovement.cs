@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = new Vector2(((gm.SpeedMultiplier+1) * 0.1f), -0.8f);
                 GameObject car = Instantiate(carPrefab) as GameObject;
                 //Debug.Log(car.position.x);
-                car.transform.position = new Vector2(xAxisPlayer+2, 0.0f);            
+                car.transform.position = new Vector2(xAxisPlayer-15, 0.0f);            
             }
             else if(colTag == "StayCol")
             {
