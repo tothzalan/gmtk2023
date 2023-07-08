@@ -20,7 +20,6 @@ namespace PropScripts
             BuoyResource.GetInstance().AddAmount(1);
             mapGenerator.buoyCount++;
             
-            FinalizeNeutralization();
             Destroy(gameManager);
         }
 
