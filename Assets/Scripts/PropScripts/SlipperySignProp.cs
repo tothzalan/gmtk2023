@@ -10,12 +10,12 @@ namespace PropScripts
 
         protected override void TriggerStart()
         {
-            animator = gameManager.GetComponent<Animator>();
+            animator = gameObject.GetComponent<Animator>();
         }
 
         public override bool CanInteract()
         {
-            return !animator.GetBool(IsDestroyed);
+            return true;
         }
 
         public override void AttemptNeutralize()
