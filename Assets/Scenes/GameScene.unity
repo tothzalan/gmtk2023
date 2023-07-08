@@ -191,7 +191,7 @@ Canvas:
   m_GameObject: {fileID: 63979760}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 199518131}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -336,11 +336,27 @@ PrefabInstance:
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8680863704167742748, guid: f09ebe9ed2a551da4af816ace2c5bd36, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8680863704167742748, guid: f09ebe9ed2a551da4af816ace2c5bd36, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8680863704167742748, guid: f09ebe9ed2a551da4af816ace2c5bd36, type: 3}
       propertyPath: m_LocalPosition.z
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 9089461785038100339, guid: f09ebe9ed2a551da4af816ace2c5bd36, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 145184016436076160, guid: f09ebe9ed2a551da4af816ace2c5bd36, type: 3}
+    - {fileID: 2806344887914382161, guid: f09ebe9ed2a551da4af816ace2c5bd36, type: 3}
+    - {fileID: 8631503293907908781, guid: f09ebe9ed2a551da4af816ace2c5bd36, type: 3}
+    - {fileID: 1661634726428611427, guid: f09ebe9ed2a551da4af816ace2c5bd36, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f09ebe9ed2a551da4af816ace2c5bd36, type: 3}
@@ -687,6 +703,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 906470152135986890, guid: d95055125fe65374f972198f6511a6db, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 906470152135986890, guid: d95055125fe65374f972198f6511a6db, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 2049294345
+      objectReference: {fileID: 0}
     - target: {fileID: 8004166253386679528, guid: d95055125fe65374f972198f6511a6db, type: 3}
       propertyPath: m_Name
       value: Player2D
@@ -705,7 +729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8868596428654147817, guid: d95055125fe65374f972198f6511a6db, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8868596428654147817, guid: d95055125fe65374f972198f6511a6db, type: 3}
       propertyPath: m_LocalRotation.w

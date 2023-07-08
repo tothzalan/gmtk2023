@@ -40,7 +40,7 @@ public class InventoryItemHandler : MonoBehaviour
         amountText.text = resource.NumberOwned.ToString();
     }
 
-    void OnMouseDown()
+    public void Clicked()
     {
         if( resource.CanUseResource()
             && inventoryManager.UsingCurrently == ResourceType.None)
