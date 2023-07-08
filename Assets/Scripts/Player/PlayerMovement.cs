@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     private float horizontal;
     private bool isCollided;
-    
+    public Animator animation;
     public GameObject carPrefab;
     //private float speed = 8f;
 
@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     void Start() {
         isCollided = false;
         triggerEvent = false;
+        animation.enabled = true;
         rb = gameObject.GetComponent<Rigidbody2D>();
         gm = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
       //spawn = GameObject.FindWithTag("SpawnTag").GetComponent<Spawner>();
@@ -41,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = new Vector2(0.0f, 0.0f);
             }
         }
+        if(dead)
+            animation.enabled = false;
     }
 
     void OnTriggerEnter2D(Collider2D col){

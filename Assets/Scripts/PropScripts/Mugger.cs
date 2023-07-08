@@ -12,7 +12,6 @@ public class Mugger : AbstractProp
 
     public override bool CanInteract() 
     {
-        Debug.Log($"CanInteract: {gameManager.inventoryManager.UsingCurrently == ResourceType.Police} {gameManager.inventoryManager.UsingCurrently}");
         return gameManager.inventoryManager.UsingCurrently == ResourceType.Police;
     }
 
