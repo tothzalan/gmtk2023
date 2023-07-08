@@ -96,7 +96,6 @@ GameObject:
   - component: {fileID: -8180694368712493390}
   - component: {fileID: 2795712166360843862}
   - component: {fileID: 4853102327916625769}
-  - component: {fileID: 9122206355990717074}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -205,31 +204,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ySpeed: 5
-  collisionOffset: 0.05
-  movementFilter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
   rb: {fileID: 0}
---- !u!114 &9122206355990717074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4801489714790769769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3f719df966eb9c44be3b041b4d2b180, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
