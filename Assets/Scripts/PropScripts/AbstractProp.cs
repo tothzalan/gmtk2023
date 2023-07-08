@@ -19,13 +19,8 @@ public abstract class AbstractProp : MonoBehaviour, IPointerClickHandler
         mapGenerator = GameObject.FindWithTag("GameController").GetComponent<MapGenerator>();
         TriggerStart();
     }
-<<<<<<< Updated upstream
-    
-    public void OnPointerClick(PointerEventData eventData)
-=======
 
-    private void OnMouseUpAsButton()
->>>>>>> Stashed changes
+    public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button != PointerEventData.InputButton.Left || !CanInteract())
             return;
