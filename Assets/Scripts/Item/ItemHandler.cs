@@ -24,12 +24,22 @@ public class ItemHandler : MonoBehaviour
     {
         GameObject.Destroy(gameObject);
         
+        Resource instance;
         switch(resourceType)
         {
             case ResourceType.Buoy:
-                Resource instance = BuoyResource.GetInstance();
-                instance.AddAmount(1);
+                instance = BuoyResource.GetInstance();
+                break;
+            case ResourceType.Water:
+                instance = WaterResource.GetInstance();
+                break;
+            case ResourceType.Police:
+                instance = PoliceResource.GetInstance();
+                break;
+            default:
+                instance = BlackoutResource.GetInstance();
                 break;
         }
+        instance.AddAmount(1);
     }
 }
