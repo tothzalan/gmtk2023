@@ -20,7 +20,7 @@ public abstract class AbstractProp : MonoBehaviour
     {
         AttemptNeutralize();
     }
-    
+
     public void ExecuteInteraction()
     {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
         if (!CanInteract())
