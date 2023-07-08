@@ -13,20 +13,24 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private GameManager gm;
     private CarMovement cm;
+    private Spawner spawn;
 
+    public float xAxisPlayer;
     public bool triggerEvent;
 
     void Start() {
-        isCollided = false;;
+        isCollided = false;
         triggerEvent = false;
         rb = gameObject.GetComponent<Rigidbody2D>();
         gm = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
+        spawn = GameObject.FindWithTag("SpawnTag").GetComponent<Spawner>();
     }
 
     private void FixedUpdate(){
         if(isCollided == false){
             if(triggerEvent == false){
                 rb.velocity = new Vector2(((gm.SpeedMultiplier+1) * 0.1f), 0.0f);
+                xAxisPlayer = rb.position.x; 
             }else{
                 rb.velocity = new Vector2(0.0f, 0.0f);
             }
@@ -49,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
     void OnTriggerExit2D(Collider2D col){
         var a = col.tag;
         if(a == "EnterCol"){
-
+            
         }else if(a == "ExitCol"){
             isCollided = false;
             rb.velocity = new Vector2(((gm.SpeedMultiplier+1) * 0.1f), 0.0f);
