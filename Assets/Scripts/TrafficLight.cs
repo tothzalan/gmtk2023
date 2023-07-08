@@ -11,33 +11,38 @@ public class TrafficLight : MonoBehaviour
 
     private Rigidbody2D rigidBody;
     private SpriteRenderer spriteRenderer;
+    private BoxCollider2D boxCollider;
 
 
     void Start()
     {
         rigidBody = gameObject.GetComponent<Rigidbody2D>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        ChangeColor();
+        boxCollider = gameObject.GetComponent<BoxCollider2D>();
+        ChangeState();
     }
 
     void OnMouseDown()
     {
         if(state == TrafficLightState.Green)
-        {
             state = TrafficLightState.Red;
-        }
         else if(state == TrafficLightState.Red)
-        {
             state = TrafficLightState.Green;
-        }
-        ChangeColor();
+        ChangeState();
     }
 
-    void ChangeColor()
+    void ChangeState()
     {
         if(state == TrafficLightState.Green)
+        {
+            boxCollider.isTrigger = true;
             spriteRenderer.color = green;
+
+        }
         else if(state == TrafficLightState.Red)
+        {
+            boxCollider.isTrigger = false;
             spriteRenderer.color = red;
+        }
     }
 }
