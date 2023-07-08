@@ -23,7 +23,7 @@ public class CarMovement : MonoBehaviour
     void Update()
     {
         if(isCollided == false){
-            if(spawnPos.y > 2){
+            if(spawnPos.y > 5){
                 rb.velocity = new Vector2(0.0f, -ySpeed);
                 transform.localScale = new Vector2(transform.localScale.x, (-1)*scaleY);
             }
