@@ -21,18 +21,18 @@ public class BusStopScript : AbstractProp
     }
 
     public override bool CanInteract(){
-        if((gameManager.playerPos.xAxisPlayer - spawnPos.x) < 10){
+        /*if((spawnPos.x - gameManager.playerPos.position.x) < 5){
             return true;
         }else{
             return false;
-        }
-        
+        }*/
+        return true;
     }
 
     public override void AttemptNeutralize(){
         //TODO: Regenerate Map
         GameObject bus = Instantiate(busPrefab) as GameObject;
-        bus.transform.position = new Vector2((spawnPos.x-10), spawnPos.y-1.5f);
+        bus.transform.position = new Vector2((spawnPos.x-15), spawnPos.y-1.5f);
         
     }
 
