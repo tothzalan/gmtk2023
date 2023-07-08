@@ -42,8 +42,6 @@ namespace PropScripts
             {
                 
             }
-            
-            FinalizeNeutralization();
         }
 
         public override void ExecuteInteraction()

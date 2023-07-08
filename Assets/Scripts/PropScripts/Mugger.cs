@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Enums;
+using PropScripts;
 using UnityEngine;
 
 public class Mugger : AbstractProp
@@ -10,12 +12,12 @@ public class Mugger : AbstractProp
 
     public override bool CanInteract() 
     {
-        return false;
+        return gameManager.inventoryManager.UsingCurrently == ResourceType.Police;
     }
 
     public override void AttemptNeutralize()
     {
-
+        
     }
 
     void OnTriggerEnter2D(Collider2D col)

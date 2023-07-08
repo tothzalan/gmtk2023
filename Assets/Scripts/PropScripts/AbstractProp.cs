@@ -1,65 +1,66 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using PropScripts;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public abstract class AbstractProp : MonoBehaviour, IPointerClickHandler
+namespace PropScripts
 {
-    protected GameManager gameManager;
-    protected MapGenerator mapGenerator;
-
-    [NonSerialized]
-    public bool hasNeutralized;
-    // Start is called before the first frame update
-    void Start()
+    public abstract class AbstractProp : MonoBehaviour, IPointerClickHandler
     {
-        gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
-        mapGenerator = GameObject.FindWithTag("GameController").GetComponent<MapGenerator>();
-        TriggerStart();
-    }
+        protected GameManager gameManager;
+        protected MapGenerator mapGenerator;
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        if (eventData.button != PointerEventData.InputButton.Left || !CanInteract())
-            return;
-        AttemptNeutralize();
-    }
+        [NonSerialized]
+        public bool hasNeutralized;
+        // Start is called before the first frame update
+        void Start()
+        {
+            gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
+            mapGenerator = GameObject.FindWithTag("GameController").GetComponent<MapGenerator>();
+            TriggerStart();
+        }
 
-    public virtual void ExecuteInteraction()
-    {
-        gameManager.RemoveMoney(MoneyToRemove);
-        gameManager.AddToxicity(ToxicityDifference);
-        gameManager.AddScore(ScoreDifference);
-    }
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            if (eventData.button != PointerEventData.InputButton.Left || !CanInteract() || hasNeutralized)
+                return;
+            AttemptNeutralize();
+            FinalizeNeutralization();
+        }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("PlatformDestroy"))
+        public virtual void ExecuteInteraction()
+        {
+            gameManager.RemoveMoney(MoneyToRemove);
+            gameManager.AddToxicity(ToxicityDifference);
+            gameManager.AddScore(ScoreDifference);
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.gameObject.CompareTag("PlatformDestroy"))
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        public void FinalizeNeutralization()
+        {
+            hasNeutralized = true;
+        }
+    
+        public void Destroy()
         {
             Destroy(gameObject);
         }
-    }
 
-    public void FinalizeNeutralization()
-    {
-        hasNeutralized = true;
-    }
-    
-    public void Destroy()
-    {
-        Destroy(gameObject);
-    }
-
-    protected virtual void TriggerStart()
-    {
+        protected virtual void TriggerStart()
+        {
         
-    }
+        }
 
-    public abstract bool CanInteract();
-    public abstract void AttemptNeutralize();
-    public abstract int MoneyToRemove { get; }
-    public abstract int ToxicityDifference { get; }
-    public abstract int ScoreDifference { get; }
+        public abstract bool CanInteract();
+        public abstract void AttemptNeutralize();
+        public abstract int MoneyToRemove { get; }
+        public abstract int ToxicityDifference { get; }
+        public abstract int ScoreDifference { get; }
+    }
 }
