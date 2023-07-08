@@ -21,7 +21,12 @@ public class BusStopScript : AbstractProp
     }
 
     public override bool CanInteract(){
-        if()
+        if((gameManager.playerPos.xAxisPlayer - spawnPos.x) < 10){
+            return true;
+        }else{
+            return false;
+        }
+        
     }
 
     public override void AttemptNeutralize(){
