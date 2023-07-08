@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Enums;
+using PropScripts;
 
-public class ItemHandler : MonoBehaviour
+public class ItemHandler : AbstractProp
 {
     [SerializeField]
     public ResourceType resourceType;
@@ -14,6 +15,10 @@ public class ItemHandler : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
+
+    public override int MoneyToRemove { get { return 0; } }
+    public override int ToxicityDifference { get { return 0; } }
+    public override int ScoreDifference { get { return 15; } }
     
     void Start()
     {
@@ -36,13 +41,12 @@ public class ItemHandler : MonoBehaviour
         gameObject.transform.localScale = new Vector2(0.3f, 0.3f);
     }
 
-    // Update is called once per frame
-    void Update()
+    public override bool CanInteract()
     {
-
+        return true;
     }
 
-    void OnMouseDown()
+    public override void AttemptNeutralize()
     {
         Resource instance;
         switch(resourceType)
