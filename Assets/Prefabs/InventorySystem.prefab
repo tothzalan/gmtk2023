@@ -29,10 +29,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8680863704167742748}
-  - {fileID: 8370566216387190652}
-  - {fileID: 1102076375227558633}
-  - {fileID: 7732914755666496058}
+  - {fileID: 1951381354875538854}
+  - {fileID: 5345722514373686874}
+  - {fileID: 7988890498069654411}
+  - {fileID: 8922403241349146216}
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -54,12 +54,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryGameObjects:
-  - {fileID: 9089461785038100339}
-  - {fileID: 8248034037129819411}
-  - {fileID: 655135489075511430}
-  - {fileID: 7857666589778255957}
-  inventoryHandlers: []
---- !u!1001 &84125224750909007
+  - {fileID: 3300137950472963943}
+  - {fileID: 9004684354493512859}
+  - {fileID: 6343037978611818826}
+  - {fileID: 5551386390194793641}
+--- !u!1001 &632716870805105041
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -68,14 +67,26 @@ PrefabInstance:
     m_TransformParent: {fileID: 8361623491736405409}
     m_Modifications:
     - target: {fileID: 691812473030323133, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
-      propertyPath: inventoryManager
+      propertyPath: resourceType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2457254102550515586, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+      propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 4928130175475976664}
-    - target: {fileID: 691812473030323133, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+      objectReference: {fileID: 21300000, guid: 68416dfe2a9e7cab78ef2752f21d0e58, type: 3}
+    - target: {fileID: 2669417829291667190, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+      propertyPath: m_Name
+      value: BuoyInventoryItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034149188210675687, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: inventoryManagerGameObject
       value: 
       objectReference: {fileID: 4626809466035797359}
-    - target: {fileID: 2457254102550515586, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+    - target: {fileID: 8257268327920837021, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8257268327920837021, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: a4bbfc6651775f6449816024a40d3bfe, type: 3}
@@ -133,19 +144,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -165,28 +176,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9155428986476728636, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_Name
-      value: BuoyInventoryItem
+      value: PoliceInventoryItem
       objectReference: {fileID: 0}
     - target: {fileID: 9155428986476728636, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_TagString
-      value: BuoyInventory
+      value: PoliceInventory
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
---- !u!224 &8680863704167742748 stripped
+--- !u!224 &1951381354875538854 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
-  m_PrefabInstance: {fileID: 84125224750909007}
+  m_CorrespondingSourceObject: {fileID: 1428608259539952695, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+  m_PrefabInstance: {fileID: 632716870805105041}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &9089461785038100339 stripped
+--- !u!1 &3300137950472963943 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 9155428986476728636, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
-  m_PrefabInstance: {fileID: 84125224750909007}
+  m_CorrespondingSourceObject: {fileID: 2669417829291667190, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+  m_PrefabInstance: {fileID: 632716870805105041}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &970659200423601199
+--- !u!1001 &6484266373141516909
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -196,17 +207,37 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 691812473030323133, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: resourceType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1428608259539952695, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 2457254102550515586, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 886f2449efae8272abb0458acbd0d563, type: 3}
+    - target: {fileID: 2669417829291667190, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+      propertyPath: m_Name
+      value: WaterInventoryItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669417829291667190, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+      propertyPath: m_TagString
+      value: WaterInventory
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034149188210675687, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+      propertyPath: resourceType
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 691812473030323133, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
-      propertyPath: inventoryManager
-      value: 
-      objectReference: {fileID: 4928130175475976664}
-    - target: {fileID: 691812473030323133, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+    - target: {fileID: 8034149188210675687, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: inventoryManagerGameObject
       value: 
       objectReference: {fileID: 4626809466035797359}
-    - target: {fileID: 2457254102550515586, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+    - target: {fileID: 8257268327920837021, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8257268327920837021, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 1379dcad33ff2cf5a84b6fde2b96c1e6, type: 3}
@@ -260,23 +291,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99999624
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0027404518
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 150
+      value: 450
       objectReference: {fileID: 0}
     - target: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -284,7 +315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -0.314
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -296,28 +327,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9155428986476728636, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_Name
-      value: WaterInventoryItem
+      value: BlackoutInventoryItem
       objectReference: {fileID: 0}
     - target: {fileID: 9155428986476728636, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_TagString
-      value: WaterInventory
+      value: BlackoutInventory
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
---- !u!1 &8248034037129819411 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9155428986476728636, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
-  m_PrefabInstance: {fileID: 970659200423601199}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &8370566216387190652 stripped
+--- !u!224 &5345722514373686874 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
-  m_PrefabInstance: {fileID: 970659200423601199}
+  m_CorrespondingSourceObject: {fileID: 1428608259539952695, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+  m_PrefabInstance: {fileID: 6484266373141516909}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1297762397979849065
+--- !u!1 &9004684354493512859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2669417829291667190, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+  m_PrefabInstance: {fileID: 6484266373141516909}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7494502002147820127
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -327,17 +358,37 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 691812473030323133, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: resourceType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1428608259539952695, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 2457254102550515586, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1379dcad33ff2cf5a84b6fde2b96c1e6, type: 3}
+    - target: {fileID: 2669417829291667190, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+      propertyPath: m_Name
+      value: BlackoutInventoryItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669417829291667190, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+      propertyPath: m_TagString
+      value: BlackoutInventory
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034149188210675687, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+      propertyPath: resourceType
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 691812473030323133, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
-      propertyPath: inventoryManager
-      value: 
-      objectReference: {fileID: 4928130175475976664}
-    - target: {fileID: 691812473030323133, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+    - target: {fileID: 8034149188210675687, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: inventoryManagerGameObject
       value: 
       objectReference: {fileID: 4626809466035797359}
-    - target: {fileID: 2457254102550515586, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+    - target: {fileID: 8257268327920837021, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8257268327920837021, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 886f2449efae8272abb0458acbd0d563, type: 3}
@@ -391,23 +442,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99999624
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0027404518
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 450
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -415,7 +466,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -0.314
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -427,28 +478,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9155428986476728636, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_Name
-      value: BlackoutInventoryItem
+      value: WaterInventoryItem
       objectReference: {fileID: 0}
     - target: {fileID: 9155428986476728636, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_TagString
-      value: BlackoutInventory
+      value: WaterInventory
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
---- !u!224 &7732914755666496058 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
-  m_PrefabInstance: {fileID: 1297762397979849065}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7857666589778255957 stripped
+--- !u!1 &5551386390194793641 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 9155428986476728636, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
-  m_PrefabInstance: {fileID: 1297762397979849065}
+  m_CorrespondingSourceObject: {fileID: 2669417829291667190, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+  m_PrefabInstance: {fileID: 7494502002147820127}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &8509864196435579322
+--- !u!224 &8922403241349146216 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1428608259539952695, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+  m_PrefabInstance: {fileID: 7494502002147820127}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &9010948796221099964
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -456,19 +507,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8361623491736405409}
     m_Modifications:
-    - target: {fileID: 691812473030323133, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+    - target: {fileID: 1428608259539952695, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669417829291667190, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+      propertyPath: m_Name
+      value: PoliceInventoryItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669417829291667190, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+      propertyPath: m_TagString
+      value: PoliceInventory
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034149188210675687, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: resourceType
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 691812473030323133, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
-      propertyPath: inventoryManager
-      value: 
-      objectReference: {fileID: 4928130175475976664}
-    - target: {fileID: 691812473030323133, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+    - target: {fileID: 8034149188210675687, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: inventoryManagerGameObject
       value: 
       objectReference: {fileID: 4626809466035797359}
-    - target: {fileID: 2457254102550515586, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+    - target: {fileID: 8257268327920837021, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8257268327920837021, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 68416dfe2a9e7cab78ef2752f21d0e58, type: 3}
@@ -526,19 +589,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 300
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -558,24 +621,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9155428986476728636, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: m_Name
-      value: PoliceInventoryItem
-      objectReference: {fileID: 0}
-    - target: {fileID: 9155428986476728636, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
-      propertyPath: m_TagString
-      value: PoliceInventory
+      value: InventoryItem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
---- !u!1 &655135489075511430 stripped
+--- !u!1 &6343037978611818826 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 9155428986476728636, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
-  m_PrefabInstance: {fileID: 8509864196435579322}
+  m_CorrespondingSourceObject: {fileID: 2669417829291667190, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+  m_PrefabInstance: {fileID: 9010948796221099964}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &1102076375227558633 stripped
+--- !u!224 &7988890498069654411 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8742121267279330131, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
-  m_PrefabInstance: {fileID: 8509864196435579322}
+  m_CorrespondingSourceObject: {fileID: 1428608259539952695, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
+  m_PrefabInstance: {fileID: 9010948796221099964}
   m_PrefabAsset: {fileID: 0}
