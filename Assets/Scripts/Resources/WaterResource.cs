@@ -20,8 +20,8 @@ public class WaterResource : Resource
 
     public static WaterResource Init(int numberOwned)
     {
-        if(instance != null)
-            throw new InvalidOperationException("You have already initialized the Singleton");
+        if (instance != null)
+            return instance;
         instance = new WaterResource(numberOwned);
         return instance;
     }

@@ -20,8 +20,8 @@ public class PoliceResource : Resource
 
     public static PoliceResource Init(int numberOwned)
     {
-        if(instance != null)
-            throw new InvalidOperationException("You have already initialized the Singleton");
+        if (instance != null)
+            return instance;
         instance = new PoliceResource(numberOwned);
         return instance;
     }
