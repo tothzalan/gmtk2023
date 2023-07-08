@@ -31,7 +31,7 @@ public class MapGenerator : MonoBehaviour
     private Transform playerPos;
     private System.Random rand = new ();
 
-    private float lastPlatformX = -platformLength;
+    private float lastPlatformX = -platformLength * 2;
 
     private const int platformLength = 20;
 
@@ -45,6 +45,7 @@ public class MapGenerator : MonoBehaviour
     {
         manager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
         playerPos = GameObject.FindWithTag("Player").transform;
+        PlacePlatform();
         PlacePlatform();
         PlacePlatform();
     }
@@ -75,7 +76,7 @@ public class MapGenerator : MonoBehaviour
             Destroy(activeProps[i]);
         }
 
-        lastPlatformX = -platformLength;
+        lastPlatformX = -platformLength * 2;
         
         playerPos.position = Vector3.zero;
     }

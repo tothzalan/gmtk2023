@@ -28,11 +28,13 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject InventoryManagerGameObject;
     public InventoryManager inventoryManager;
+    public Transform playerPos;
 
     // Start is called before the first frame update
     void Start() // This should only exist when the actual game loads, not on menu
     {
         inventoryManager = InventoryManagerGameObject.GetComponent<InventoryManager>();
+        playerPos = GameObject.FindWithTag("Player").transform;
     }
 
     private double ScoreMultiplier => (double)score / 100; // score reward/punishment should go up according
