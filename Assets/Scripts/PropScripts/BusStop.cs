@@ -6,12 +6,15 @@ using PropScripts;
 public class BusStopScript : AbstractProp
 {
     public GameObject busPrefab;
+    public GameObject playerPrefab;
     public Vector2 spawnPos;
+    private int isPressed;
     // Start is called before the first frame update
     void Start()
     {
         spawnPos = transform.position;
-         
+        playerPrefab = GameObject.FindWithTag("Player");
+        isPressed = 0;
     }
 
     // Update is called once per frame
@@ -21,12 +24,17 @@ public class BusStopScript : AbstractProp
     }
 
     public override bool CanInteract(){
-        /*if((spawnPos.x - gameManager.playerPos.position.x) < 5){
+        if(isPressed == 1){
+            Debug.Log("Nem nyomhatod meg tobbszor!");
+            return false;
+        } 
+        Debug.Log(playerPrefab.transform.position.x);
+        if((spawnPos.x - playerPrefab.transform.position.x) < 1){
+            isPressed++;
             return true;
         }else{
             return false;
-        }*/
-        return true;
+        }
     }
 
     public override void AttemptNeutralize(){
