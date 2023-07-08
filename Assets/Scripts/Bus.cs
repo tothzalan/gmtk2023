@@ -5,16 +5,21 @@ using UnityEngine;
 public class Bus : MonoBehaviour
 {
     private Rigidbody2D busRigidBody;
+    public float speed = 10.0f;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
         busRigidBody = gameObject.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void FixedUpdate(){
+        busRigidBody.velocity = new Vector2(speed, 0.0f);
+    }
+
+    void OnTriggerEnter2D(Collider2D col){
+        if(col.tag == "BusStop"){
+            speed = 0;
+        }
     }
 }
