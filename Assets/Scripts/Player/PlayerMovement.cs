@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         gm = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
       //spawn = GameObject.FindWithTag("SpawnTag").GetComponent<Spawner>();
-        //cm = GameObject.FindWithTag("Car");
+        cm = GameObject.FindWithTag("Car").GetComponent<CarMovement>();
     }
 
     private void FixedUpdate(){
@@ -43,24 +43,26 @@ public class PlayerMovement : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col){
         var a = col.tag;
         Debug.Log("Fasz vagy");
-        isCollided = true;
         if(a == "EnterCol"){
+            isCollided = true;
             rb.velocity = new Vector2(((gm.SpeedMultiplier+1) * 0.1f), -1.0f);
         }else if(a == "StayCol"){
+            isCollided = true;
             rb.velocity = new Vector2(((gm.SpeedMultiplier+1) * 0.1f), 0.0f);
         }else if(a == "ExitCol"){
+            isCollided = true;
             rb.velocity = new Vector2(((gm.SpeedMultiplier+1) * 0.1f), 1.0f);
         }
     }
     
     void OnTriggerExit2D(Collider2D col){
         var a = col.tag;
-        /*
+        
         if(a == "EnterCol"){
             //Instantiate(cm, new Vector3(xAxisPlayer+2, ySpawn, 0));
         }else if(a == "ExitCol"){
             isCollided = false;
             rb.velocity = new Vector2(((gm.SpeedMultiplier+1) * 0.1f), 0.0f);
-        }*/
+        }
     }
 }

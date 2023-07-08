@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  InventoryManagerGameObject: {fileID: 4626809466035797359, guid: f09ebe9ed2a551da4af816ace2c5bd36, type: 3}
 --- !u!114 &4149098813892110924
 MonoBehaviour:
   m_ObjectHideFlags: 0
