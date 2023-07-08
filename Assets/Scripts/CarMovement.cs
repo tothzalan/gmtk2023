@@ -6,8 +6,8 @@ public class CarMovement : MonoBehaviour
 {
     private Vector2 spawnPos;
     private bool isCollided;
-    public float ySpeed = 5.0f;
-    public Rigidbody2D rb;
+    public float speed = 5.0f;
+    public Rigidbody2D rigidBody;
     float scaleY;
 
     // Start is called before the first frame update
@@ -16,30 +16,36 @@ public class CarMovement : MonoBehaviour
         isCollided = false;
         spawnPos = transform.position;
         scaleY = transform.localScale.y;
-        rb = gameObject.GetComponent<Rigidbody2D>();
+        rigidBody = gameObject.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        rigidBody.velocity = new Vector2(speed, 0);
+        /*
         if(isCollided == false){
             if(spawnPos.y > 5){
-                rb.velocity = new Vector2(0.0f, -ySpeed);
+                rigidBody.velocity = new Vector2(0.0f, -ySpeed);
                 transform.localScale = new Vector2(transform.localScale.x, (-1)*scaleY);
             }
             else if(spawnPos.y < -2){
-                rb.velocity = new Vector2(0.0f, ySpeed);
+                rigidBody.velocity = new Vector2(0.0f, ySpeed);
                 transform.localScale = new Vector2(transform.localScale.x, scaleY);
             }else if(spawnPos.y == 0.5){
-                rb.velocity = new Vector2(15.0f, 0.0f);
+                rigidBody.velocity = new Vector2(15.0f, 0.0f);
                 transform.localScale = new Vector2(transform.localScale.x, scaleY);
-            }    
+            }
         }
+        */
     }
 
     void OnTriggerEnter2D(Collider2D col){
-        rb.velocity = Vector2.zero;
-        isCollided = true;
+        if(col.tag == "TrafficCollider")
+        {
+            rigidBody.velocity = Vector2.zero;
+            isCollided = true;
+        }
     }
 
 }
