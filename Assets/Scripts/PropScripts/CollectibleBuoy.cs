@@ -1,4 +1,5 @@
 using System;
+using System.Security.Cryptography;
 
 namespace PropScripts
 {
@@ -18,6 +19,7 @@ namespace PropScripts
             // here add to resources
             
             FinalizeNeutralization();
+            Destroy(gameManager);
         }
 
         public override int MoneyToRemove { get; } = 0;

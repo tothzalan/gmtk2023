@@ -21,7 +21,7 @@ public abstract class AbstractProp : MonoBehaviour
         AttemptNeutralize();
     }
 
-    public void ExecuteInteraction()
+    public virtual void ExecuteInteraction()
     {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
         if (!CanInteract())
             return;
@@ -30,9 +30,22 @@ public abstract class AbstractProp : MonoBehaviour
         gameManager.AddScore(ScoreDifference);
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("PlatformDestroy"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
     public void FinalizeNeutralization()
     {
         hasNeutralized = true;
+    }
+    
+    public void Destroy()
+    {
+        Destroy(gameObject);
     }
 
     protected virtual void TriggerStart()

@@ -45,8 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6a9ae557419b67499334210032cd14f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 0
-  toxicity: 0
+  ctl: 0
   score: 0
 --- !u!114 &4149098813892110924
 MonoBehaviour:
@@ -60,10 +59,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27d1b47e63f517d449fefde431053fbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platforms: []
+  platforms:
+  - {fileID: 8753950460620836393, guid: 6b78b56b4982b414d8532e6247b79108, type: 3}
+  interestProps:
+  - {fileID: 42452895410824446, guid: 973f967f824c91642ac0fd57f2c0867e, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 6100436417626677973, guid: 0a899594b1a894947af47f686909c27e, type: 3}
+  - {fileID: 6100436417626677973, guid: 57ab089011470694b9705a371728ee7e, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 7376368150902203947, guid: 57a83aaf5d6920142b7730c53f6c0145, type: 3}
   chances:
-    duoy: 0.009999999776482582
-    police: 0
+    douyCollectible: 0
+    policeCollectible: 0
+    storeBlackoutCollectible: 0
     dealer: 0
     hooker: 0
     pub: 0
@@ -71,4 +84,5 @@ MonoBehaviour:
     trafficLight: 0
     busStation: 0
     walkOnRoad: 0
-  interestProps: []
+    wetFloor: 0
+    blackout: 0

@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
     private int toxicity;
     public int Toxicity { get { return toxicity; } }
 
-    [SerializeField]
     private int ctl = 0;
     [SerializeField]
     private int score = 0;
@@ -19,6 +18,10 @@ public class GameManager : MonoBehaviour
     public int Score { get { return score; } }
 
     private bool isDeadFlag = false;
+
+    public bool IsBlackOut { get; private set; }
+
+    private readonly System.Random rand = new ();
 
     // Start is called before the first frame update
     void Start() // This should only exist when the actual game loads, not on menu
@@ -32,14 +35,24 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (rand.NextDouble() <= 0.05)
+        {
+            IsBlackOut = true;
+        }
+        
         if (isDeadFlag)
             return;
         ctl++;
-        if (ctl == 60)
+        if (ctl == 120)
         {
             AddScore(2); // score per sec here
             ctl = 0;
         }
+    }
+
+    public void EndBlackOut()
+    {
+        IsBlackOut = false;
     }
 
     public void RemoveMoney(int amount)
