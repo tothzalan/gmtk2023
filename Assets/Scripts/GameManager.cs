@@ -17,7 +17,8 @@ public class GameManager : MonoBehaviour
     
     public int Score { get { return score; } }
 
-    private bool isDeadFlag = false;
+    private bool dead = false;
+    public bool Dead { get { return dead; } set { dead = value; }}
 
     public bool IsBlackOut { get; private set; }
 
@@ -44,7 +45,7 @@ public class GameManager : MonoBehaviour
             IsBlackOut = true;
         }
         
-        if (isDeadFlag)
+        if (dead)
             return;
         ctl++;
         if (ctl == 120)
@@ -64,7 +65,7 @@ public class GameManager : MonoBehaviour
         money -= amount;
         if (money < 0)
         {
-            isDeadFlag = true;
+            dead = true;
             money = 0;
         }
     }
@@ -79,5 +80,4 @@ public class GameManager : MonoBehaviour
         score += (int)(amount * (1 + ScoreMultiplier));
     }
 
-    public bool IsDead => isDeadFlag;
 }

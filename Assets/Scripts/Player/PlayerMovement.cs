@@ -44,19 +44,30 @@ public class PlayerMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col){
         var a = col.tag;
-        Debug.Log("Fasz vagy");
-        if(a == "EnterCol"){
+        //Debug.Log("Fasz vagy");
+        if(a == "EnterCol")
+        {
             isCollided = true;
             rb.velocity = new Vector2(((gm.SpeedMultiplier+1) * 0.1f), -0.8f);
             GameObject car = Instantiate(carPrefab) as GameObject;
             //Debug.Log(car.position.x);
             car.transform.position = new Vector2(xAxisPlayer+2, 0.0f);            
-        }else if(a == "StayCol"){
+        }
+        else if(a == "StayCol")
+        {
             isCollided = true;
             rb.velocity = new Vector2(((gm.SpeedMultiplier+1) * 0.1f), 0.0f);
-        }else if(a == "ExitCol"){
+        }
+        else if(a == "ExitCol")
+        {
             isCollided = true;
             rb.velocity = new Vector2(((gm.SpeedMultiplier+1) * 0.1f), 0.8f);
+        }
+        else if(a == "Car")
+        {
+            // TODO: play cool death animation
+            rb.velocity = new Vector2(0, 0);
+            gm.Dead = true;
         }
     }
     
