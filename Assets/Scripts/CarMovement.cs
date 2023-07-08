@@ -5,6 +5,8 @@ using UnityEngine;
 public class CarMovement : MonoBehaviour
 {
     private Vector2 spawnPos;
+    public float ySpeed = 5.0f;
+    private List<RaycastHit2D> castCollision = new List<RaycastHit2D>();
     public Rigidbody2D rb;
     float scaleY;
 
@@ -20,12 +22,16 @@ public class CarMovement : MonoBehaviour
     void Update()
     {
         if(spawnPos.y > 2){
-            rb.velocity = new Vector2(0.0f, -5.0f);
+            rb.velocity = new Vector2(0.0f, -ySpeed);
             transform.localScale = new Vector2(transform.localScale.x, (-1)*scaleY);
         }
         else if(spawnPos.y < -2){
-            rb.velocity = new Vector2(0.0f, 5.0f);
+            rb.velocity = new Vector2(0.0f, ySpeed);
             transform.localScale = new Vector2(transform.localScale.x, scaleY);
         }
     }
+/*
+    public bool Collision(){
+        
+    }*/
 }
