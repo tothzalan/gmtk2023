@@ -31,6 +31,9 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate(){
         if(isCollided == false){
             if(triggerEvent == false){
+                if(rb.position.y > 1.5){
+                    rb.position.y = 1.5;
+                }
                 rb.velocity = new Vector2(((gm.SpeedMultiplier+1) * 0.1f), 0.0f);
                 xAxisPlayer = rb.position.x; 
             }else{
@@ -55,11 +58,12 @@ public class PlayerMovement : MonoBehaviour
     
     void OnTriggerExit2D(Collider2D col){
         var a = col.tag;
+        /*
         if(a == "EnterCol"){
             //Instantiate(cm, new Vector3(xAxisPlayer+2, ySpawn, 0));
         }else if(a == "ExitCol"){
             isCollided = false;
             rb.velocity = new Vector2(((gm.SpeedMultiplier+1) * 0.1f), 0.0f);
-        }
+        }*/
     }
 }
