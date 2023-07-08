@@ -33,18 +33,17 @@ public class ItemHandler : MonoBehaviour
                 spriteRenderer.sprite = sprites[3];
                 break;
         }
+        gameObject.transform.localScale = new Vector2(0.3f, 0.3f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnMouseDown()
     {
-        GameObject.Destroy(gameObject);
-        
         Resource instance;
         switch(resourceType)
         {
@@ -62,5 +61,6 @@ public class ItemHandler : MonoBehaviour
                 break;
         }
         instance.AddAmount(1);
+        GameObject.Destroy(gameObject);
     }
 }
