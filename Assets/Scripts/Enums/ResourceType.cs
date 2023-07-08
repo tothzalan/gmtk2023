@@ -5,6 +5,7 @@ namespace Enums
         Buoy,
         Water,
         Police,
-        Blackout
+        Blackout,
+        None
     }
 }
