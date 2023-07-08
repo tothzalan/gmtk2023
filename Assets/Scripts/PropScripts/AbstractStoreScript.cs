@@ -29,13 +29,14 @@ namespace PropScripts
                 return;
             hasChanged = true;
 
-            switch (status)
+            if (status == ShopStatus.Closed)
+                status = ShopStatus.Open;
+            else /*Requires access to resource use*/
             {
-                case ShopStatus.Closed: status = ShopStatus.Open;
-                    break;
-                case ShopStatus.Open: status = ShopStatus.Closed;
-                    break;
+                
             }
+            
+            FinalizeNeutralization();
         }
     }
 }
