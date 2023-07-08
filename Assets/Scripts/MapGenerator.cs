@@ -63,11 +63,12 @@ public class MapGenerator : MonoBehaviour
     {
         GameObject selected = platforms[rand.Next(platforms.Count)];
         lastPlatformX += platformLength;
+        GameObject newObject = Instantiate(selected, new Vector3(lastPlatformX, 0), new Quaternion(0, 0, 0, 0));
         
         // populate map tile
-        for (int i = 0; i < selected.transform.childCount; i++)
+        for (int i = 0; i < newObject.transform.childCount; i++)
         {
-            GameObject interestPoint = selected.transform.GetChild(i).gameObject;
+            GameObject interestPoint = newObject.transform.GetChild(i).gameObject;
             PointOfInterest? obj = interestPoint.GetComponent<PointOfInterest>();
 
             if(obj == null)
@@ -94,7 +95,7 @@ public class MapGenerator : MonoBehaviour
             }
         }
         
-        Instantiate(selected, new Vector3(lastPlatformX, 0), new Quaternion(0, 0, 0, 0));
+        
     }
 
     /// <summary>
@@ -147,10 +148,10 @@ public class MapGenerator : MonoBehaviour
 
         for (int i = 0; i < ch.Length; i++)
         {
-            if (ch[i] < chance)
+            if (ch[i] >= chance)
                 return i;
 
-            chance--;
+            chance -= ch[i];
         }
 
         return -1;
