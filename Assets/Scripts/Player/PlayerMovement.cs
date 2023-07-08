@@ -31,9 +31,6 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate(){
         if(isCollided == false){
             if(triggerEvent == false){
-                if(rb.position.y > 1.5){
-                    rb.position.y = 1.5;
-                }
                 rb.velocity = new Vector2(((gm.SpeedMultiplier+1) * 0.1f), 0.0f);
                 xAxisPlayer = rb.position.x; 
             }else{
