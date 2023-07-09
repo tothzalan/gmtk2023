@@ -30,4 +30,10 @@ public class CarMovement : MonoBehaviour
     {
         rigidBody.velocity = new Vector2(speed, 0);
     }
+
+    void OnTriggerEnter2D(Collider2D col){
+        if(col.tag == "Prop"){
+            Destroy(gameObject);
+        }
+    }
 }
