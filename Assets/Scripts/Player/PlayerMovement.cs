@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator animation;
     public GameObject carPrefab;
 
-    private float maxSpeed = 15f;
+    private float maxSpeed = 10f;
     [SerializeField]
     private float speed;
 
