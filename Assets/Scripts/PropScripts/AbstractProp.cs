@@ -72,7 +72,11 @@ namespace PropScripts
         
         }
 
-        public abstract bool CanInteract();
+        public virtual bool CanInteract()
+        {
+            return gameManager.inventoryManager.UsingCurrently == ResourceType.None;
+        }
+
         public abstract void AttemptNeutralize();
         public abstract int MoneyToRemove { get; }
         public abstract int ToxicityDifference { get; }
