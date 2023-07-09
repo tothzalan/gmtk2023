@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Enums;
 
 namespace PropScripts
 {
@@ -11,11 +12,6 @@ namespace PropScripts
         protected override void TriggerStart()
         {
             animator = gameObject.GetComponent<Animator>();
-        }
-
-        public override bool CanInteract()
-        {
-            return true;
         }
 
         public override void AttemptNeutralize()

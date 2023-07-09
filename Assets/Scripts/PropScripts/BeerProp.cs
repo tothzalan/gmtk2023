@@ -7,11 +7,6 @@ namespace PropScripts
         private Animator animator;
         private static readonly int Delete = Animator.StringToHash("Delete");
 
-        public override bool CanInteract()
-        {
-            return true;
-        }
-
         protected override void TriggerStart()
         {
             animator = gameObject.GetComponent<Animator>();
