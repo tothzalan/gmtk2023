@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.IO.LowLevel.Unsafe;
@@ -10,6 +11,13 @@ public class PauseMenu : MonoBehaviour
     private bool isPaused = false;
     public GameManager gameManager;
     public GameObject pauseMenuUI;
+    private GameObject ui;
+
+    private void Start()
+    {
+        ui = GameObject.FindWithTag("UICanvas");
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -31,6 +39,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         isPaused = true;
         gameManager.isPaused = this.isPaused;
+        ui.SetActive(false);
     }
 
     public void Resume()
@@ -39,6 +48,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
         gameManager.isPaused = this.isPaused;
+        ui.SetActive(true);
     }
 
     public void LoadMainMenu()
