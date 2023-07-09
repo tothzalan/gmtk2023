@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7387500825720224945}
   - component: {fileID: 7714651933057376206}
   - component: {fileID: 8674258732488153764}
-  - component: {fileID: 8170011124324915164}
+  - component: {fileID: 2318928513667180262}
   - component: {fileID: 6597925863859125653}
   m_Layer: 0
   m_Name: Beer
@@ -132,7 +132,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.147694, y: 5.12}
   m_EdgeRadius: 0
---- !u!95 &8170011124324915164
+--- !u!95 &2318928513667180262
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -142,7 +142,7 @@ Animator:
   m_GameObject: {fileID: 2490164630360580258}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fc20056befaf4f446abd285aae82c669, type: 2}
+  m_Controller: {fileID: 9100000, guid: b3b5196c791ea48488164669054ba732, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

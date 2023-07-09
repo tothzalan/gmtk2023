@@ -14,6 +14,7 @@ public class ItemHandler : AbstractProp
     public List<Sprite> sprites;
 
     private SpriteRenderer spriteRenderer;
+    private BoxCollider2D boxCollider;
 
 
     public override int MoneyToRemove { get { return 0; } }
@@ -23,6 +24,7 @@ public class ItemHandler : AbstractProp
     void Start()
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        boxCollider = gameObject.GetComponent<BoxCollider2D>();
         switch(resourceType)
         {
             case ResourceType.Buoy:
@@ -35,7 +37,8 @@ public class ItemHandler : AbstractProp
                 spriteRenderer.sprite = sprites[2];
                 break;
         }
-        gameObject.transform.localScale = new Vector2(0.3f, 0.3f);
+        gameObject.transform.localScale = new Vector2(0.25f, 0.25f);
+        boxCollider.size = new Vector2(5, 5);
     }
 
     public override bool CanInteract()
