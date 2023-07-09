@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     private bool dead = false;
     public bool Dead { get { return dead; } set { dead = value; }}
     public string killedBy = "";
+    
+    public float Speed { get; set; }
 
     public bool IsBlackOut { get; private set; }
 
