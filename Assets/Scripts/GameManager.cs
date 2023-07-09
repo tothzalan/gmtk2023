@@ -37,6 +37,10 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public GameObject carPrefab;
 
+    [SerializeField]
+    public GameObject deathScreen;
+    private DeathScreen deathScreenScript;
+
     // Start is called before the first frame update
     void Start() // This should only exist when the actual game loads, not on menu
     {
@@ -46,6 +50,8 @@ public class GameManager : MonoBehaviour
         
         lifetime = 0;
         timeout = 0;
+
+        deathScreenScript = deathScreen.GetComponent<DeathScreen>();
     }
 
     private double ScoreMultiplier => (double)score / 100; // score reward/punishment should go up according
@@ -58,9 +64,12 @@ public class GameManager : MonoBehaviour
         {
             IsBlackOut = true;
         }
-        
+
         if (dead)
+        {
+            deathScreenScript.Death();
             return;
+        }
         ctl++;
         if (ctl == 120)
         {
@@ -100,6 +109,8 @@ public class GameManager : MonoBehaviour
     public void AddToxicity(int amount)
     {
         toxicity = Math.Max(Math.Min(toxicity + amount, 100), 0);
+        if(toxicity > 80)
+            dead = true;
     }
 
     public void AddScore(int amount)
@@ -109,5 +120,4 @@ public class GameManager : MonoBehaviour
             score += (int)(amount * (1 + ScoreMultiplier));
         }
     }
-
 }

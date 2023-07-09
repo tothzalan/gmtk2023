@@ -12,6 +12,7 @@ public class DeathScreen : MonoBehaviour
     private GameObject ui;
     private TMP_Text score;
     public GameObject backToMenuBtn;
+
     void Start()
     {
         gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();

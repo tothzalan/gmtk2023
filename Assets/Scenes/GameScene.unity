@@ -540,6 +540,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 317552646685057141, guid: 97f07c277f426f84e9767e4f8d9695ce, type: 3}
+      propertyPath: deathScreen
+      value: 
+      objectReference: {fileID: 1646557804}
+    - target: {fileID: 317552646685057141, guid: 97f07c277f426f84e9767e4f8d9695ce, type: 3}
       propertyPath: InventoryManagerGameObject
       value: 
       objectReference: {fileID: 319970061}

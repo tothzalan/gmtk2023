@@ -8,8 +8,6 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     public Animator animation;
     public GameObject carPrefab;
-    private DeathScreen deathScreenScript;
-    public GameObject deathScreen;
     private float speed = 8f;
 
     private Rigidbody2D rigidBody;
@@ -22,14 +20,12 @@ public class PlayerMovement : MonoBehaviour
         animation.enabled = true;
         rigidBody = gameObject.GetComponent<Rigidbody2D>();
         gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
-        deathScreenScript = deathScreen.GetComponent<DeathScreen>();
     }
 
     private void FixedUpdate(){
         if (dead)
         {
             rigidBody.velocity = Vector2.zero;
-            deathScreenScript.Death();
             animation.enabled = false;
             return;
         }
