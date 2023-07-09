@@ -20,19 +20,24 @@ public class StatusBarsHandler : MonoBehaviour
 
     void Update()
     {
-        score.text = gameManager.Score.ToString();
+        FormatScore(gameManager.Score);
         FormatToxicity(gameManager.Toxicity);
         FormatMoney(gameManager.Money);
     }
 
+    private void FormatScore(int amount)
+    {
+        score.text = $"<mark=#000000aa>${amount}</mark>";
+    }
+
     private void FormatToxicity(int amount)
     {
-        toxicity.text = $"{amount}%";
+        toxicity.text = $"<mark=#000000aa>{amount}%</mark>";
     }
 
     private void FormatMoney(int amount)
     {
-        money.text = $"${amount}";
+        money.text = $"<mark=#000000aa><${amount}</mark>";
     }
 
 }
