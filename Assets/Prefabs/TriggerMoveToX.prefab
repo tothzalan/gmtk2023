@@ -168,6 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7252789532183754956}
   - component: {fileID: 2093251295430874043}
+  - component: {fileID: 5198568327785178645}
   m_Layer: 0
   m_Name: buoyColl
   m_TagString: Untagged
@@ -235,6 +236,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.111442, y: 1.4138002}
   m_EdgeRadius: 0
+--- !u!114 &5198568327785178645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6143281748284716702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 419344a6680b4415969082f1bc539587, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buoy: {fileID: 42452895410824446, guid: 973f967f824c91642ac0fd57f2c0867e, type: 3}
 --- !u!1 &6746766613688113854
 GameObject:
   m_ObjectHideFlags: 0
