@@ -32,13 +32,12 @@ namespace PropScripts
             hasChanged = true;
             bool isOpen = animator.GetBool(IsOpen);
 
-            if (!isOpen)
-                animator.SetBool(IsOpen, true);
+            animator.SetBool(IsOpen, !isOpen);
         }
 
         public override void ExecuteInteraction()
         {
-            if (gameManager.IsBlackOut)
+            if (!animator.GetBool(IsOpen))
                 return;
             base.ExecuteInteraction();
         }
