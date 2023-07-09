@@ -28,9 +28,6 @@ public class ItemHandler : AbstractProp
             case ResourceType.Buoy:
                 spriteRenderer.sprite = sprites[0];
                 break;
-            case ResourceType.Water:
-                spriteRenderer.sprite = sprites[1];
-                break;
             case ResourceType.Police:
                 spriteRenderer.sprite = sprites[2];
                 break;
@@ -53,9 +50,6 @@ public class ItemHandler : AbstractProp
         {
             case ResourceType.Buoy:
                 instance = BuoyResource.GetInstance();
-                break;
-            case ResourceType.Water:
-                instance = WaterResource.GetInstance();
                 break;
             case ResourceType.Police:
                 instance = PoliceResource.GetInstance();

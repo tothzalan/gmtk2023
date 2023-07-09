@@ -26,9 +26,6 @@ public class InventoryItemHandler : MonoBehaviour
             case ResourceType.Buoy:
                 resource = BuoyResource.Init(5);
                 break;
-            case ResourceType.Water:
-                resource = WaterResource.Init(7);
-                break;
             case ResourceType.Police:
                 resource = PoliceResource.Init(1);
                 break;
