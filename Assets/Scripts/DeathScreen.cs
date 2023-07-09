@@ -8,8 +8,10 @@ public class DeathScreen : MonoBehaviour
     private Animation animation;
     private static bool played;
     public GameObject backToMenuBtn;
+    private GameObject ui;
     void Start()
     {
+        ui = GameObject.FindWithTag("UICanvas");
         gameObject.SetActive(false);
         animation = gameObject.GetComponent<Animation>();
         backToMenuBtn.SetActive(false);
@@ -18,6 +20,7 @@ public class DeathScreen : MonoBehaviour
 
     public void Death()
     {
+        ui.SetActive(false);
         gameObject.SetActive(true);
         if(!played)
             animation.Play("DeathScreen");
