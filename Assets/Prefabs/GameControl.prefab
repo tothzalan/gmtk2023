@@ -115,7 +115,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPaused: 0
+  money: 50
+  toxicity: 50
   score: 0
+  killedBy: 
   InventoryManagerGameObject: {fileID: 4626809466035797359, guid: f09ebe9ed2a551da4af816ace2c5bd36, type: 3}
   inventoryManager: {fileID: 4928130175475976664, guid: f09ebe9ed2a551da4af816ace2c5bd36, type: 3}
   playerPos: {fileID: 0}
@@ -157,8 +160,8 @@ MonoBehaviour:
     storeBlackoutCollectible: 1
     dealer: 1
     mugger: 1
-    pub: 1
-    kebab: 1
+    pub: 0.3499999940395355
+    kebab: 0.3499999940395355
     trafficLight: 1
     busStation: 1
     walkOnRoad: 1
