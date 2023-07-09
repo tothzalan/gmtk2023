@@ -22,7 +22,7 @@ namespace PropScripts
 
         public override bool CanInteract()
         {
-            return !hasChanged || (!hasChanged && animator.GetBool(IsOpen) && gameManager.inventoryManager.UsingCurrently == ResourceType.Blackout);
+            return (!hasChanged && !animator.GetBool(IsOpen)) || (!hasChanged && animator.GetBool(IsOpen) && gameManager.inventoryManager.UsingCurrently == ResourceType.Blackout);
         }
 
         public override void AttemptNeutralize()
