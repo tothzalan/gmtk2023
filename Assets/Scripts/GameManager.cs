@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     private bool dead = false;
     public bool Dead { get { return dead; } set { dead = value; }}
     public string killedBy = "";
+    
+    public float Speed { get; set; }
 
     public bool IsBlackOut { get; private set; }
 
@@ -78,7 +80,23 @@ public class GameManager : MonoBehaviour
             AddScore(2); // score per sec here
             ctl = 0;
         }
+
+        SpawnCar();
     }
+
+    
+    public void SpawnCar(){
+                Vector3 randomSpawnPoint = new Vector3(playerPrefab.transform.position.x-30.0f, UnityEngine.Random.Range(-0.5f,0.5f) , 0);
+        if(timeout != 0){
+            timeout--;
+        }
+        if(timeout == 0 && UnityEngine.Random.Range(0,2000) == 1){
+            Instantiate(carPrefab, randomSpawnPoint, Quaternion.identity);
+            timeout = 720;
+        }
+    }
+
+
     
     public void EndBlackOut()
     {

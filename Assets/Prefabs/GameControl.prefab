@@ -167,7 +167,7 @@ MonoBehaviour:
     walkOnRoad: 1
     wetFloor: 0.5
     beer: 0.7839999794960022
-    car: 0
+    car: 0.953000009059906
   policeCount: 0
   buoyCount: 0
   storeBlackoutCount: 0

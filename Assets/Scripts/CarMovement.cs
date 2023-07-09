@@ -24,16 +24,9 @@ public class CarMovement : MonoBehaviour
         }
     }
     
-    
     // Update is called once per frame
     void FixedUpdate()
     {
         rigidBody.velocity = new Vector2(speed, 0);
-    }
-
-    void OnTriggerEnter2D(Collider2D col){
-        if(col.tag == "Prop"){
-            Destroy(gameObject);
-        }
     }
 }
