@@ -55,7 +55,7 @@ public class MapGenerator : MonoBehaviour
         if (playerX > lastPlatformX - platformLength)
         {
             PlacePlatform();
-        }
+        } 
     }
 
     public void ReloadPlatforms()
@@ -75,7 +75,7 @@ public class MapGenerator : MonoBehaviour
         }
 
         lastPlatformX = -platformLength * 2;
-        
+
         playerPos.position = Vector3.zero;
     }
 
