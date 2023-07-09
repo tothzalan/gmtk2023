@@ -15,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
     private GameManager gameManager;
 
     private bool inCollision = false;
-    private bool dead = false;
 
     void Start() {
         animation.enabled = true;
@@ -24,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void FixedUpdate(){
-        if (dead)
+        if (gameManager.Dead)
         {
             rigidBody.velocity = Vector2.zero;
             animation.enabled = false;
@@ -37,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col){
         var colTag = col.tag;
-        if(!dead)
+        if(!gameManager.Dead)
         {
             if(colTag == "EnterCol")
             {
@@ -60,7 +59,6 @@ public class PlayerMovement : MonoBehaviour
             }
             else if(colTag == "Car")
             {
-                dead = true;
                 gameManager.killedBy = "Car";
                 gameManager.Dead = true;
             }

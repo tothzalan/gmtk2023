@@ -44,8 +44,8 @@ public class MapGenerator : MonoBehaviour
     {
         manager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
         playerPos = GameObject.FindWithTag("Player").transform;
-        PlacePlatform();
-        PlacePlatform();
+        PlacePlatform(false);
+        PlacePlatform(false);
         PlacePlatform();
     }
 
@@ -87,12 +87,14 @@ public class MapGenerator : MonoBehaviour
         // TODO: add bus spawn and stop spawn to spawn point aka: 0, 0, 0
     }
 
-    private void PlacePlatform()
+    private void PlacePlatform(bool spawnProp = true)
     {
         GameObject selected = platforms[rand.Next(platforms.Count)];
         lastPlatformX += platformLength;
         GameObject newObject = Instantiate(selected, new Vector3(lastPlatformX, 0), new Quaternion(0, 0, 0, 0));
-        
+
+        if (!spawnProp)
+            return;
         // populate map tile
         for (int i = 0; i < newObject.transform.childCount; i++)
         {

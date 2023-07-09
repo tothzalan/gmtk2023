@@ -5519,6 +5519,10 @@ PrefabInstance:
       value: InterestPoint
       objectReference: {fileID: 0}
     - target: {fileID: 4393158277062307174, guid: f58f97acc5d0e224796d32df8d26016c, type: 3}
+      propertyPath: beerSpot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393158277062307174, guid: f58f97acc5d0e224796d32df8d26016c, type: 3}
       propertyPath: kebabSpot
       value: 0
       objectReference: {fileID: 0}
@@ -5692,6 +5696,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4393158277062307174, guid: f58f97acc5d0e224796d32df8d26016c, type: 3}
       propertyPath: dealerPoint
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393158277062307174, guid: f58f97acc5d0e224796d32df8d26016c, type: 3}
+      propertyPath: busStationSpot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393158277062307174, guid: f58f97acc5d0e224796d32df8d26016c, type: 3}
+      propertyPath: walkOnRoadSpot
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393158277062307174, guid: f58f97acc5d0e224796d32df8d26016c, type: 3}
+      propertyPath: collectibleBuoySpot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393158277062307174, guid: f58f97acc5d0e224796d32df8d26016c, type: 3}
+      propertyPath: collectiblePoliceSpot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393158277062307174, guid: f58f97acc5d0e224796d32df8d26016c, type: 3}
+      propertyPath: collectibleStoreBlackout
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5759,6 +5783,10 @@ PrefabInstance:
     - target: {fileID: 1627684648751240850, guid: f58f97acc5d0e224796d32df8d26016c, type: 3}
       propertyPath: m_Name
       value: InterestPoint (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393158277062307174, guid: f58f97acc5d0e224796d32df8d26016c, type: 3}
+      propertyPath: busStationSpot
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4393158277062307174, guid: f58f97acc5d0e224796d32df8d26016c, type: 3}
       propertyPath: collectibleBuoySpot
@@ -5987,6 +6015,18 @@ PrefabInstance:
       value: InterestPoint (4)
       objectReference: {fileID: 0}
     - target: {fileID: 4393158277062307174, guid: f58f97acc5d0e224796d32df8d26016c, type: 3}
+      propertyPath: beerSpot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393158277062307174, guid: f58f97acc5d0e224796d32df8d26016c, type: 3}
+      propertyPath: dealerPoint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393158277062307174, guid: f58f97acc5d0e224796d32df8d26016c, type: 3}
+      propertyPath: muggerPoint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393158277062307174, guid: f58f97acc5d0e224796d32df8d26016c, type: 3}
       propertyPath: wetFloorSpot
       value: 1
       objectReference: {fileID: 0}
@@ -5995,7 +6035,15 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4393158277062307174, guid: f58f97acc5d0e224796d32df8d26016c, type: 3}
+      propertyPath: collectibleBuoySpot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393158277062307174, guid: f58f97acc5d0e224796d32df8d26016c, type: 3}
       propertyPath: collectiblePoliceSpot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393158277062307174, guid: f58f97acc5d0e224796d32df8d26016c, type: 3}
+      propertyPath: collectibleStoreBlackout
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6063,6 +6111,10 @@ PrefabInstance:
     - target: {fileID: 1627684648751240850, guid: f58f97acc5d0e224796d32df8d26016c, type: 3}
       propertyPath: m_Name
       value: InterestPoint (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393158277062307174, guid: f58f97acc5d0e224796d32df8d26016c, type: 3}
+      propertyPath: busStationSpot
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4393158277062307174, guid: f58f97acc5d0e224796d32df8d26016c, type: 3}
       propertyPath: collectibleBuoySpot
