@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -72,7 +70,6 @@ public class GameManager : MonoBehaviour
         if (dead)
         {
             deathScreenScript.Death();
-            Time.timeScale = 0f;
             return;
         }
         ctl++;
@@ -86,7 +83,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void SpawnCar(){
-        Vector3 randomSpawnPoint = new Vector3(playerPrefab.transform.position.x-30.0f, UnityEngine.Random.Range(-0.5f,0.5f) , 0);
+        Vector3 randomSpawnPoint = new Vector3(playerPrefab.transform.position.x-150.0f, UnityEngine.Random.Range(-0.5f,0.5f) , 0);
         if(timeout != 0){
             timeout--;
         }
