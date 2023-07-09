@@ -1,3 +1,4 @@
+using System;
 using Enums;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ namespace PropScripts
         [SerializeField] private GameObject police;
 
         private Animator animator;
+        private Rigidbody2D rigid;
         private static readonly int Chased = Animator.StringToHash("Chased");
     
         public override int MoneyToRemove { get { return 20; } }
@@ -17,11 +19,20 @@ namespace PropScripts
         protected override void TriggerStart()
         {
             animator = gameObject.GetComponent<Animator>();
+            rigid = gameObject.GetComponent<Rigidbody2D>();
         }
 
         public override bool CanInteract() 
         {
             return gameManager.inventoryManager.UsingCurrently == ResourceType.Police;
+        }
+
+        private void Update()
+        {
+            if (hasNeutralized)
+            {
+                rigid.velocity = new Vector2(-1.0f * (1 + gameManager.SpeedMultiplier), 0);
+            }
         }
 
         public override void AttemptNeutralize()
