@@ -190,7 +190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8361623491736405409, guid: f09ebe9ed2a551da4af816ace2c5bd36, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -225
+      value: -150
       objectReference: {fileID: 0}
     - target: {fileID: 8361623491736405409, guid: f09ebe9ed2a551da4af816ace2c5bd36, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -253,6 +253,18 @@ PrefabInstance:
     - target: {fileID: 30515784799901630, guid: 9eafe755905f25a09a17f134d9b95e7e, type: 3}
       propertyPath: m_Name
       value: StatusBars
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077223425820654367, guid: 9eafe755905f25a09a17f134d9b95e7e, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5468901901372839406, guid: 9eafe755905f25a09a17f134d9b95e7e, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810136211253031555, guid: 9eafe755905f25a09a17f134d9b95e7e, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5934769365991777795, guid: 9eafe755905f25a09a17f134d9b95e7e, type: 3}
       propertyPath: m_LocalPosition.z

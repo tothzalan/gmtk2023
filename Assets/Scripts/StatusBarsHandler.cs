@@ -37,7 +37,7 @@ public class StatusBarsHandler : MonoBehaviour
 
     private void FormatMoney(int amount)
     {
-        money.text = $"<mark=#000000aa><${amount}</mark>";
+        money.text = $"<mark=#000000aa>{amount}</mark>";
     }
 
 }
