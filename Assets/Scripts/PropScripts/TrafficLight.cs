@@ -20,6 +20,10 @@ public class TrafficLight : AbstractProp
         ChangeState();
     }
 
+    public override void FinalizeNeutralization()
+    {
+    }
+
     public override int MoneyToRemove { get { return 0; } }
     public override int ToxicityDifference { get { return 0; } }
     public override int ScoreDifference { get { return 0; } }
