@@ -246,10 +246,10 @@ RectTransform:
   m_Father: {fileID: 3895752130643290324}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: -986, y: -516}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3023143740788931508
 GameObject:
@@ -1416,7 +1416,7 @@ PrefabInstance:
     - target: {fileID: 5602916143401352399, guid: 309f87faa508b29479b76fbed33eaa90, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2377954008711927613}
+      objectReference: {fileID: 2584822461158251306}
     - target: {fileID: 5602916143401352399, guid: 309f87faa508b29479b76fbed33eaa90, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetActive
