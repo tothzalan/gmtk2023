@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
 
     private bool dead = false;
     public bool Dead { get { return dead; } set { dead = value; }}
+    public string killedBy = "";
 
     public bool IsBlackOut { get; private set; }
 
@@ -54,7 +55,7 @@ public class GameManager : MonoBehaviour
         deathScreenScript = deathScreen.GetComponent<DeathScreen>();
     }
 
-    private double ScoreMultiplier => (double)score / 100; // score reward/punishment should go up according
+    private double ScoreMultiplier => Math.Abs((double)score / 100); // score reward/punishment should go up according
     public float SpeedMultiplier => (float)score / 100; // for speed multi 
 
     // Update is called once per frame
@@ -101,6 +102,7 @@ public class GameManager : MonoBehaviour
         money -= amount;
         if (money < 0)
         {
+            killedBy = "Brokeness";
             dead = true;
             money = 0;
         }
@@ -110,7 +112,10 @@ public class GameManager : MonoBehaviour
     {
         toxicity = Math.Max(Math.Min(toxicity + amount, 100), 0);
         if(toxicity > 80)
+        {
+            killedBy = "Toxicity";
             dead = true;
+        }
     }
 
     public void AddScore(int amount)

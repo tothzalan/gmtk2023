@@ -61,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
             else if(colTag == "Car")
             {
                 dead = true;
+                gameManager.killedBy = "Car";
                 gameManager.Dead = true;
             }
         }
