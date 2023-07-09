@@ -21,7 +21,7 @@ public class Mugger : AbstractProp
     public override void AttemptNeutralize()
     {
         GameObject officer = Instantiate(police);
-        officer.transform.position = new Vector3(transform.transform.position.x + 30, transform.position.y, -1);
+        officer.transform.position = new Vector3(gameManager.playerPos.position.x + 10, transform.position.y, -1);
         officer.GetComponent<PoliceOfficerScript>().isPlacedByPlayer = true;
         
         Destroy(gameObject);
