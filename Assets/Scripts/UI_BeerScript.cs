@@ -16,7 +16,7 @@ public class UI_BeerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 randomSpawnPoint = new Vector3(UnityEngine.Random.Range(-5,10), UnityEngine.Random.Range(5.0f,8.0f), 0);
+        Vector3 randomSpawnPoint = new Vector3(UnityEngine.Random.Range(-7,7), UnityEngine.Random.Range(5.0f,8.0f), 0);
         if(timeout != 0){
             timeout--;
         }
