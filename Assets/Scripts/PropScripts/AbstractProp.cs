@@ -43,7 +43,7 @@ namespace PropScripts
             }
         }
 
-        public void FinalizeNeutralization()
+        public virtual void FinalizeNeutralization()
         {
             switch (gameManager.inventoryManager.UsingCurrently)
             {
