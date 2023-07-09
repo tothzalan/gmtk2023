@@ -5,6 +5,6 @@ namespace PropScripts
 
         public override int MoneyToRemove { get; } = 10;
         public override int ToxicityDifference { get; } = 10;
-        public override int ScoreDifference { get; } = -100;
+        public override int ScoreDifference { get; } = -30;
     }
 }
