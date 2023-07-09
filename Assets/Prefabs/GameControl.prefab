@@ -149,6 +149,7 @@ MonoBehaviour:
   - {fileID: 8987204830286496493, guid: c02b7a9a8a1a3e248915d9a841dfa988, type: 3}
   - {fileID: 7376368150902203947, guid: 57a83aaf5d6920142b7730c53f6c0145, type: 3}
   - {fileID: 2490164630360580258, guid: c4afd89f02e90f84793c96e0c60aebfa, type: 3}
+  - {fileID: 2490164630360580258, guid: c4afd89f02e90f84793c96e0c60aebfa, type: 3}
   chances:
     douyCollectible: 1
     policeCollectible: 1
@@ -162,6 +163,7 @@ MonoBehaviour:
     walkOnRoad: 1
     wetFloor: 1
     beer: 0.7839999794960022
+    car: 0
   policeCount: 0
   buoyCount: 0
   storeBlackoutCount: 0

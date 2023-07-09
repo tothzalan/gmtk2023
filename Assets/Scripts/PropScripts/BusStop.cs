@@ -25,7 +25,6 @@ public class BusStopScript : AbstractProp
 
     public override bool CanInteract(){
         if(isPressed == 1){
-            Debug.Log("Nem nyomhatod meg tobbszor!");
             return false;
         } 
         Debug.Log(playerPrefab.transform.position.x);
