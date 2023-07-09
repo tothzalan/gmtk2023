@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using Enums;
 using PropScripts;
 using UnityEngine;
 
 public class Mugger : AbstractProp
 {
+    [SerializeField] private GameObject police;
+    
     public override int MoneyToRemove { get { return 20; } }
     public override int ToxicityDifference { get { return 5; } }
     public override int ScoreDifference { get { return -20; } }
@@ -17,7 +20,10 @@ public class Mugger : AbstractProp
 
     public override void AttemptNeutralize()
     {
-        gameManager.inventoryManager.UsingCurrently = ResourceType.None;
+        GameObject officer = Instantiate(police);
+        officer.transform.position = new Vector3(transform.transform.position.x + 30, transform.position.y, -1);
+        officer.GetComponent<PoliceOfficerScript>().isPlacedByPlayer = true;
+        
         Destroy(gameObject);
     }
 
