@@ -28,9 +28,8 @@ public class PlayerMovement : MonoBehaviour
         {
             rigidBody.velocity = Vector2.zero;
             animation.enabled = false;
-            return;
         }
-        if(!inCollision)
+        else if(!inCollision)
         {
             rigidBody.velocity = new Vector2(((gameManager.SpeedMultiplier+1) * speed), 0.0f);
         }
