@@ -17,9 +17,5 @@ public class Bus : MonoBehaviour
         busRigidBody.velocity = new Vector2(speed, 0.0f);
     }
 
-    void OnTriggerEnter2D(Collider2D col){
-        if(col.tag == "BusStop"){
-            speed = 0;
-        }
-    }
+    
 }

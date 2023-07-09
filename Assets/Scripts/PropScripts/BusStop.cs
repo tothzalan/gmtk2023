@@ -29,7 +29,7 @@ public class BusStopScript : AbstractProp
             return false;
         } 
         Debug.Log(playerPrefab.transform.position.x);
-        if((spawnPos.x - playerPrefab.transform.position.x) < 1){
+        if((spawnPos.x - playerPrefab.transform.position.x) < 3){
             isPressed++;
             return true;
         }else{
@@ -40,8 +40,8 @@ public class BusStopScript : AbstractProp
     public override void AttemptNeutralize(){
         //TODO: Regenerate Map
         GameObject bus = Instantiate(busPrefab) as GameObject;
-        bus.transform.position = new Vector2((spawnPos.x-15), spawnPos.y-1);
-        
+        bus.transform.position = new Vector2((spawnPos.x-15), spawnPos.y-4);
+        mapGenerator.ReloadPlatforms();
     }
 
     public override int MoneyToRemove{
