@@ -1,5 +1,4 @@
 using System;
-using System.Security.Cryptography;
 using Enums;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -42,6 +41,15 @@ namespace PropScripts
             {
                 Destroy(gameObject);
             }
+            else if (other.CompareTag("Player") && !hasNeutralized)
+            {
+                TriggerCollisionPlayer();
+            }
+        }
+
+        protected virtual void TriggerCollisionPlayer()
+        {
+            ExecuteInteraction();
         }
 
         public virtual void FinalizeNeutralization()

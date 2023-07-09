@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     public Animator animation;
     public GameObject carPrefab;
+    [SerializeField]
     private float speed = 8f;
 
     private Rigidbody2D rigidBody;
@@ -31,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if(!inCollision)
         {
-            rigidBody.velocity = new Vector2(((gameManager.SpeedMultiplier+1) * 0.1f * speed), 0.0f);
+            rigidBody.velocity = new Vector2(((gameManager.SpeedMultiplier+1) * speed), 0.0f);
         }
     }
 

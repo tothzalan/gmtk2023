@@ -35,6 +35,12 @@ namespace PropScripts
             animator.SetBool(IsOpen, !isOpen);
         }
 
+        public override void FinalizeNeutralization()
+        {
+            base.FinalizeNeutralization();
+            hasNeutralized = false;
+        }
+
         public override void ExecuteInteraction()
         {
             if (!animator.GetBool(IsOpen))

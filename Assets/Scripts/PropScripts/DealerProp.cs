@@ -47,8 +47,7 @@ namespace PropScripts
 
         void OnTriggerEnter2D(Collider2D col)
         {
-            if(col.tag == "Player" && !hasNeutralized)
-                ExecuteInteraction();
+            
         }
     }
 }
