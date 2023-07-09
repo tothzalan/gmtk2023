@@ -77,7 +77,11 @@ public class MapGenerator : MonoBehaviour
 
         lastPlatformX = -platformLength * 2;
 
-        playerPos.position = Vector3.zero;
+        playerPos.position = new Vector3(0, playerPos.position.y);
+        
+        PlacePlatform(false);
+        PlacePlatform(false);
+        PlacePlatform();
     }
 
     public void ReloadFromBus()

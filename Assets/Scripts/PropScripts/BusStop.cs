@@ -10,7 +10,7 @@ public class BusStopScript : AbstractProp
     public Vector2 spawnPos;
     private int isPressed;
     // Start is called before the first frame update
-    void Start()
+    protected override void TriggerStart()
     {
         spawnPos = transform.position;
         playerPrefab = GameObject.FindWithTag("Player");
@@ -38,8 +38,8 @@ public class BusStopScript : AbstractProp
 
     public override void AttemptNeutralize(){
         //TODO: Regenerate Map
-        GameObject bus = Instantiate(busPrefab) as GameObject;
-        bus.transform.position = new Vector2((spawnPos.x-15), spawnPos.y-4);
+        GameObject bus = Instantiate(busPrefab);
+        bus.transform.position = new Vector2((-20), spawnPos.y-4);
         mapGenerator.ReloadPlatforms();
     }
 
