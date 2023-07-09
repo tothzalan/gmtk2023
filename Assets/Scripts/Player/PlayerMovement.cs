@@ -17,10 +17,10 @@ public class PlayerMovement : MonoBehaviour
     private bool inCollision = false;
 
     void Start() {
-        gameManager.Speed = 2.5f;
         animation.enabled = true;
         rigidBody = gameObject.GetComponent<Rigidbody2D>();
         gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
+        gameManager.Speed = 2.5f;
     }
 
     private void FixedUpdate(){
