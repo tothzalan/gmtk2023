@@ -45,6 +45,15 @@ namespace PropScripts
 
         public void FinalizeNeutralization()
         {
+            switch (gameManager.inventoryManager.UsingCurrently)
+            {
+                case ResourceType.Blackout: BlackoutResource.GetInstance().UseResource();
+                    break;
+                case ResourceType.Buoy: BuoyResource.GetInstance().UseResource();
+                    break;
+                case ResourceType.Police: PoliceResource.GetInstance().UseResource();
+                    break;
+            }
             gameManager.inventoryManager.UsingCurrently = ResourceType.None;
             hasNeutralized = true;
         }
