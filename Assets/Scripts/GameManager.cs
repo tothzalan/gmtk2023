@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
     }
 
     private double ScoreMultiplier => Math.Abs((double)score / 100); // score reward/punishment should go up according
-    public float SpeedMultiplier => (float)Math.Floor((double)(score / 100)); // for speed multi 
+    public float SpeedMultiplier => (float)Math.Abs(Math.Floor((double)(score / 100))); // for speed multi 
 
     // Update is called once per frame
     void Update()
