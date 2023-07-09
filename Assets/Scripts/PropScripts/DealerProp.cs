@@ -10,7 +10,9 @@ namespace PropScripts
         private GameObject police;
 
         private Rigidbody2D rigid;
-        
+        private Animator animator;
+        private static readonly int Flee = Animator.StringToHash("Flee");
+
         public override int MoneyToRemove { get; } = 30;
         public override int ToxicityDifference { get; } = 20;
         public override int ScoreDifference { get; } = -50;
@@ -18,6 +20,7 @@ namespace PropScripts
         protected override void TriggerStart()
         {
             rigid = gameObject.GetComponent<Rigidbody2D>();
+            animator = gameObject.GetComponent<Animator>();
         }
 
         public override bool CanInteract()
@@ -30,6 +33,8 @@ namespace PropScripts
             GameObject officer = Instantiate(police);
             officer.transform.position = new Vector3(transform.transform.position.x + 30, transform.position.y, -1);
             officer.GetComponent<PoliceOfficerScript>().isPlacedByPlayer = true;
+            
+            animator.SetTrigger(Flee);
         }
 
         private void Update()
