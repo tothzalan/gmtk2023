@@ -104,7 +104,7 @@ public class MapGenerator : MonoBehaviour
 
             if (ind != -1)
             {
-                // TODO collectible counter here
+                // collectible counter here
                 switch (ind)
                 {
                     case 0: buoyCount++;
