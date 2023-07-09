@@ -20,8 +20,7 @@ public class MapGenerator : MonoBehaviour
     /// 8. bus station
     /// 9. walk on road (timed car coming)
     /// 10. wet floor
-    /// 11. blackout spot
-    /// 12. TODO more
+    /// 11. beer
     /// </summary>
     [SerializeField]
     private List<GameObject> interestProps;
@@ -135,44 +134,80 @@ public class MapGenerator : MonoBehaviour
     {
         double[] ch = new double[interestProps.Count];
         int d = 0;
-        if(pointInterest.collectibleBuoySpot)
+        double sum = 0;
+        if (pointInterest.collectibleBuoySpot)
+        {
             ch[d] = chances.douyCollectible;
+            sum++;
+        }
         d++;
-        if(pointInterest.collectiblePoliceSpot)
+        if (pointInterest.collectiblePoliceSpot)
+        {
             ch[d] = chances.policeCollectible;
+            sum++;
+        }
         d++;
-        if(pointInterest.collectibleStoreBlackout)
+        if (pointInterest.collectibleStoreBlackout)
+        {
             ch[d] = chances.storeBlackoutCollectible;
+            sum++;
+        }
         d++;
-        if(pointInterest.pubSpot && storeBlackoutCount > 0)
+        if (pointInterest.pubSpot && storeBlackoutCount > 0)
+        {
             ch[d] = chances.pub;
+            sum++;
+        }
         d++;
-        if(pointInterest.kebabSpot && storeBlackoutCount > 0)
+        if (pointInterest.kebabSpot && storeBlackoutCount > 0)
+        {
             ch[d] = chances.kebab;
+            sum++;
+        }
         d++;
-        if(pointInterest.dealerPoint && policeCount > 0)
+        if (pointInterest.dealerPoint && policeCount > 0)
+        {
             ch[d] = chances.dealer;
+            sum++;
+        }
         d++;
-        if(pointInterest.muggerPoint)
+        if (pointInterest.muggerPoint)
+        {
             ch[d] = chances.mugger;
+            sum++;
+        }
         d++;
-        if(pointInterest.trafficLightSpot)
+        if (pointInterest.trafficLightSpot)
+        {
             ch[d] = chances.trafficLight;
+            sum++;
+        }
         d++;
-        if(pointInterest.busStationSpot)
+        if (pointInterest.busStationSpot)
+        {
             ch[d] = chances.busStation;
+            sum++;
+        }
         d++;
-        if(pointInterest.walkOnRoadSpot && buoyCount > 0)
+        if (pointInterest.walkOnRoadSpot && buoyCount > 0)
+        {
             ch[d] = chances.walkOnRoad;
+            sum++;
+        }
         d++;
-        if(pointInterest.wetFloorSpot)
+        if (pointInterest.wetFloorSpot)
+        {
             ch[d] = chances.wetFloor;
+            sum++;
+        }
         d++;
-        if(pointInterest.blackOutSpot)
-            ch[d] = chances.blackout;
-        d++;
+        if (pointInterest.beerSpot)
+        {
+            ch[d] = chances.beer;
+            sum++;
+        }
 
-        double chance = rand.NextDouble() * ch.Length;
+        double chance = rand.NextDouble() * sum;
 
         for (int i = 0; i < ch.Length; i++)
         {
@@ -211,6 +246,6 @@ public class InterestSpawnChanceMap
     public double walkOnRoad;
     [Range(0,1)]
     public double wetFloor;
-    [Range(0,1)]
-    public double blackout;
+    [Range(0, 1)] 
+    public double beer;
 }

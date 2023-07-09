@@ -28,7 +28,7 @@ namespace PropScripts
         {
             if (isPlacedByPlayer)
             {
-                rigidBody.velocity = new Vector2(2.0f * (1 + gameManager.SpeedMultiplier), 0);
+                rigidBody.velocity = new Vector2(-1 * (1 + gameManager.SpeedMultiplier), 0);
                 animator.SetTrigger(ChaseTrigger);
             }
         }
