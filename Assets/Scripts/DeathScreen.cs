@@ -11,11 +11,14 @@ public class DeathScreen : MonoBehaviour
     private static bool played;
     private GameObject ui;
     private TMP_Text score;
+    private TMP_Text killedBy;
     public GameObject backToMenuBtn;
+
     void Start()
     {
         gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
         score = GetComponentsInChildren<TMP_Text>()[0];
+        killedBy = GetComponentsInChildren<TMP_Text>()[1];
         ui = GameObject.FindWithTag("UICanvas");
         gameObject.SetActive(false);
         animation = gameObject.GetComponent<Animation>();
@@ -26,6 +29,7 @@ public class DeathScreen : MonoBehaviour
     public void Death()
     {
         score.text = "Score: " + gameManager.Score.ToString();
+        killedBy.text = "Killed by: " + gameManager.killedBy;
         ui.SetActive(false);
         gameObject.SetActive(true);
         if(!played)

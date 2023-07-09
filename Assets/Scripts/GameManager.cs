@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
 
     private bool dead = false;
     public bool Dead { get { return dead; } set { dead = value; }}
+    public string killedBy = "";
 
     public bool IsBlackOut { get; private set; }
 
@@ -37,6 +38,10 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public GameObject carPrefab;
 
+    [SerializeField]
+    public GameObject deathScreen;
+    private DeathScreen deathScreenScript;
+
     // Start is called before the first frame update
     void Start() // This should only exist when the actual game loads, not on menu
     {
@@ -46,9 +51,11 @@ public class GameManager : MonoBehaviour
         
         lifetime = 0;
         timeout = 0;
+
+        deathScreenScript = deathScreen.GetComponent<DeathScreen>();
     }
 
-    private double ScoreMultiplier => (double)score / 100; // score reward/punishment should go up according
+    private double ScoreMultiplier => Math.Abs((double)score / 100); // score reward/punishment should go up according
     public float SpeedMultiplier => (float)score / 100; // for speed multi 
 
     // Update is called once per frame
@@ -58,9 +65,12 @@ public class GameManager : MonoBehaviour
         {
             IsBlackOut = true;
         }
-        
+
         if (dead)
+        {
+            deathScreenScript.Death();
             return;
+        }
         ctl++;
         if (ctl == 120)
         {
@@ -92,6 +102,7 @@ public class GameManager : MonoBehaviour
         money -= amount;
         if (money < 0)
         {
+            killedBy = "Brokeness";
             dead = true;
             money = 0;
         }
@@ -100,6 +111,11 @@ public class GameManager : MonoBehaviour
     public void AddToxicity(int amount)
     {
         toxicity = Math.Max(Math.Min(toxicity + amount, 100), 0);
+        if(toxicity > 80)
+        {
+            killedBy = "Toxicity";
+            dead = true;
+        }
     }
 
     public void AddScore(int amount)
@@ -109,5 +125,4 @@ public class GameManager : MonoBehaviour
             score += (int)(amount * (1 + ScoreMultiplier));
         }
     }
-
 }
