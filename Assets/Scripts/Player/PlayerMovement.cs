@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isCollided;
     public Animator animation;
     public GameObject carPrefab;
+    private DeathScreen deathScreenScript;
+    public GameObject deathScreen;
     //private float speed = 8f;
 
     private Rigidbody2D rb;
@@ -29,7 +31,8 @@ public class PlayerMovement : MonoBehaviour
         animation.enabled = true;
         rb = gameObject.GetComponent<Rigidbody2D>();
         gm = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
-      //spawn = GameObject.FindWithTag("SpawnTag").GetComponent<Spawner>();
+        deathScreenScript = deathScreen.GetComponent<DeathScreen>();
+        //spawn = GameObject.FindWithTag("SpawnTag").GetComponent<Spawner>();
         //cm = GameObject.FindWithTag("Car").GetComponent<CarMovement>();
     }
 
@@ -42,8 +45,12 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = new Vector2(0.0f, 0.0f);
             }
         }
-        if(dead)
+
+        if (dead)
+        {
+            deathScreenScript.Death();
             animation.enabled = false;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col){

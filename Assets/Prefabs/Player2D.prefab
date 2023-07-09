@@ -230,7 +230,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2049294345
+  m_SortingLayerID: 850722047
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 181373143, guid: 488601af29181314091ead6a2fe9f974, type: 3}
@@ -285,6 +285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animation: {fileID: 6402927880322970598}
   carPrefab: {fileID: 4801489714790769769, guid: 59ff5e85c2db7da46bcc9bbee38c09ad, type: 3}
+  deathScreen: {fileID: 0}
   xAxisPlayer: 0
   ySpawn: 0
   triggerEvent: 0

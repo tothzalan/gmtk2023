@@ -586,6 +586,27 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c02b7a9a8a1a3e248915d9a841dfa988, type: 3}
+--- !u!1 &1646557804 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7814229306520385501, guid: b6a58dbeec0fadd4a8a600b389f57f2c, type: 3}
+  m_PrefabInstance: {fileID: 1776379892}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &1646557810
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646557804}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 4f208bb87a01cbc4cb2bc5ee58b04c8d, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 4f208bb87a01cbc4cb2bc5ee58b04c8d, type: 2}
+  m_WrapMode: 1
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1660010325
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,7 +685,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 906470152135986890, guid: d95055125fe65374f972198f6511a6db, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 906470152135986890, guid: d95055125fe65374f972198f6511a6db, type: 3}
       propertyPath: m_SortingLayerID
@@ -674,6 +695,10 @@ PrefabInstance:
       propertyPath: animation
       value: 
       objectReference: {fileID: 1110958911}
+    - target: {fileID: 5500966078413544527, guid: d95055125fe65374f972198f6511a6db, type: 3}
+      propertyPath: deathScreen
+      value: 
+      objectReference: {fileID: 1646557804}
     - target: {fileID: 8004166253386679528, guid: d95055125fe65374f972198f6511a6db, type: 3}
       propertyPath: m_Name
       value: Player2D
@@ -735,6 +760,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 508430235262296313, guid: b6a58dbeec0fadd4a8a600b389f57f2c, type: 3}
+      propertyPath: animation
+      value: 
+      objectReference: {fileID: 1646557810}
     - target: {fileID: 3294999412608026938, guid: b6a58dbeec0fadd4a8a600b389f57f2c, type: 3}
       propertyPath: m_Name
       value: DeathScreen
@@ -786,5 +815,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7814229306520385501, guid: b6a58dbeec0fadd4a8a600b389f57f2c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1646557810}
   m_SourcePrefab: {fileID: 100100000, guid: b6a58dbeec0fadd4a8a600b389f57f2c, type: 3}
