@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if(!inCollision)
         {
-            rigidBody.velocity = new Vector2(((gameManager.SpeedMultiplier+1) * speed), 0.0f);
+            rigidBody.velocity = new Vector2(((gameManager.SpeedMultiplier+1) * speed)*1.0f, 0.0f);
         }
     }
 
