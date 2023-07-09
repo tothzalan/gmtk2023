@@ -27,7 +27,7 @@ public class InventoryItemHandler : MonoBehaviour
                 resource = BuoyResource.Init(5);
                 break;
             case ResourceType.Police:
-                resource = PoliceResource.Init(0);
+                resource = PoliceResource.Init(1);
                 break;
             case ResourceType.Blackout:
                 resource = BlackoutResource.Init(10);
