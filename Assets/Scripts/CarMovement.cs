@@ -6,21 +6,15 @@ using Enums;
 public class CarMovement : MonoBehaviour
 {
     private Vector2 spawnPos;
-    private GameObject playerPrefab;
-    private GameObject carPrefab;
-    public Rigidbody2D rigidBody;
+    private Rigidbody2D rigidBody;
     public float speed = 5.0f;
-    private int timeout;
-    private int lifetime;
+    private int lifetime = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         spawnPos = transform.position;
         rigidBody = gameObject.GetComponent<Rigidbody2D>();
-        playerPrefab = GameObject.FindWithTag("Player");
-        carPrefab = GameObject.FindWithTag("Car");
-        lifetime = 0;
     }
 
     void Update(){
