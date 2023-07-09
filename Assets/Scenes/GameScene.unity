@@ -628,6 +628,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: UICanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5667651789250365882, guid: 94745b9c6e6bec8ca8f339214f300bf0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -150
+      objectReference: {fileID: 0}
+    - target: {fileID: 5667651789250365882, guid: 94745b9c6e6bec8ca8f339214f300bf0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6402110485877721677, guid: 94745b9c6e6bec8ca8f339214f300bf0, type: 3}
       propertyPath: m_Pivot.x
       value: 0

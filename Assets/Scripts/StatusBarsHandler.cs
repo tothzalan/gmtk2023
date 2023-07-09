@@ -27,7 +27,7 @@ public class StatusBarsHandler : MonoBehaviour
 
     private void FormatScore(int amount)
     {
-        score.text = $"<mark=#000000aa>${amount}</mark>";
+        score.text = $"<mark=#000000aa>{amount}</mark>";
     }
 
     private void FormatToxicity(int amount)
@@ -37,7 +37,7 @@ public class StatusBarsHandler : MonoBehaviour
 
     private void FormatMoney(int amount)
     {
-        money.text = $"<mark=#000000aa><${amount}</mark>";
+        money.text = $"<mark=#000000aa>${amount}</mark>";
     }
 
 }
