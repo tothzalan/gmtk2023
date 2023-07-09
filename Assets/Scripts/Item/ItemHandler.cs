@@ -29,10 +29,10 @@ public class ItemHandler : AbstractProp
                 spriteRenderer.sprite = sprites[0];
                 break;
             case ResourceType.Police:
-                spriteRenderer.sprite = sprites[2];
+                spriteRenderer.sprite = sprites[1];
                 break;
             default:
-                spriteRenderer.sprite = sprites[3];
+                spriteRenderer.sprite = sprites[2];
                 break;
         }
         gameObject.transform.localScale = new Vector2(0.3f, 0.3f);

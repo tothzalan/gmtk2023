@@ -54,7 +54,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryGameObjects:
   - {fileID: 3300137950472963943}
-  - {fileID: 0}
   - {fileID: 6343037978611818826}
   - {fileID: 5551386390194793641}
 --- !u!1001 &632716870805105041
@@ -226,7 +225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8034149188210675687, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: resourceType
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8034149188210675687, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: inventoryManagerGameObject
@@ -369,7 +368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8034149188210675687, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: resourceType
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8034149188210675687, guid: cd8ad69dbde8403429bc65eff514d638, type: 3}
       propertyPath: inventoryManagerGameObject
