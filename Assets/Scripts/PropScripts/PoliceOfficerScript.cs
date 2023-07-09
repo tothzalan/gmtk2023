@@ -15,7 +15,7 @@ namespace PropScripts
 
         public override bool CanInteract()
         {
-            return !isPlacedByPlayer;
+            return base.CanInteract() && !isPlacedByPlayer;
         }
 
         protected override void TriggerStart()

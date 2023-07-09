@@ -12,11 +12,6 @@ namespace PropScripts
             animator = gameObject.GetComponent<Animator>();
         }
 
-        public override bool CanInteract()
-        {
-            return true;
-        }
-
         public override void AttemptNeutralize()
         {
             

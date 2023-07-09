@@ -6,10 +6,6 @@ using PropScripts;
 
 public class TrafficLight : AbstractProp
 {
-    public override bool CanInteract()
-    {
-        return true;
-    }
 
     public override void AttemptNeutralize()
     {
