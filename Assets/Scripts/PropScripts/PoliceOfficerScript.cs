@@ -1,39 +1,51 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using PropScripts;
 using UnityEngine;
 
-public class PoliceOfficerScript : AbstractProp
+namespace PropScripts
 {
-    [NonSerialized]
-    public bool isPlacedByPlayer;
-
-    private Rigidbody2D rigidBody;
-    public override bool CanInteract()
+    public class PoliceOfficerScript : AbstractProp
     {
-        return true;
-    }
+        [NonSerialized]
+        public bool isPlacedByPlayer;
 
-    protected override void TriggerStart()
-    {
-        rigidBody = gameObject.GetComponent<Rigidbody2D>();
-    }
+        private Rigidbody2D rigidBody;
+        private Animator animator;
+        private static readonly int ChaseTrigger = Animator.StringToHash("ChaseTrigger");
+        private static readonly int Collected = Animator.StringToHash("Collected");
 
-    private void Update()
-    {
-        if (isPlacedByPlayer)
+        public override bool CanInteract()
         {
-            rigidBody.velocity = new Vector2(2.0f, 0);
+            return !isPlacedByPlayer;
         }
+
+        protected override void TriggerStart()
+        {
+            rigidBody = gameObject.GetComponent<Rigidbody2D>();
+            animator = gameObject.GetComponent<Animator>();
+        }
+
+        private void Update()
+        {
+            if (isPlacedByPlayer)
+            {
+                rigidBody.velocity = new Vector2(2.0f * (1 + gameManager.SpeedMultiplier), 0);
+                animator.SetTrigger(ChaseTrigger);
+            }
+        }
+
+        public override void AttemptNeutralize()
+        {
+            if (isPlacedByPlayer)
+                return;
+            
+            // here add to resources
+            PoliceResource.GetInstance().AddAmount(1);
+            animator.SetTrigger(Collected);
+        }
+
+        public override int MoneyToRemove { get; }
+        public override int ToxicityDifference { get; }
+        public override int ScoreDifference { get; } = 20;
+
     }
-
-    public override void AttemptNeutralize()
-    {
-    }
-
-    public override int MoneyToRemove { get; }
-    public override int ToxicityDifference { get; }
-    public override int ScoreDifference { get; } = 20;
-
 }

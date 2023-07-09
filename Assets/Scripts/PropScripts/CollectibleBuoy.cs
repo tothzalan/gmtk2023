@@ -26,8 +26,7 @@ namespace PropScripts
             
             // here add to resources
             BuoyResource.GetInstance().AddAmount(1);
-            mapGenerator.buoyCount++;
-            anim.SetBool("PickedUp", true);
+            anim.SetBool(PickedUp, true);
         }
 
         public override int MoneyToRemove { get; } = 0;
