@@ -668,7 +668,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 906470152135986890, guid: d95055125fe65374f972198f6511a6db, type: 3}
       propertyPath: m_SortingLayerID
-      value: 850722047
+      value: 2049294345
       objectReference: {fileID: 0}
     - target: {fileID: 5500966078413544527, guid: d95055125fe65374f972198f6511a6db, type: 3}
       propertyPath: animation
