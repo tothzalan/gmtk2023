@@ -39,41 +39,5 @@ public class PlayerMovement : MonoBehaviour
             rigidBody.velocity = new Vector2(speed, 0.0f);
         }
     }
-
-    void OnTriggerEnter2D(Collider2D col){
-        var colTag = col.tag;
-        if(!gameManager.Dead)
-        {
-            if(colTag == "EnterCol")
-            {
-                inCollision = true;
-                gameObject.transform.position =
-                    Vector2.Lerp(
-                        gameObject.transform.position, 
-                        new Vector2(gameObject.transform.position.x, gameObject.transform.position.y - 5),
-                        Time.deltaTime * 10);
-            }
-
-            else if(colTag == "ExitCol")
-            {
-                inCollision = true;
-                gameObject.transform.position =
-                    Vector2.Lerp(
-                        gameObject.transform.position, 
-                        new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + 5),
-                        Time.deltaTime * 10);
-            }
-            else if(colTag == "Car")
-            {
-                gameManager.killedBy = "Car";
-                gameManager.Dead = true;
-            }
-        }
-    }
     
-    void OnTriggerExit2D(Collider2D col)
-    {
-        if(col.tag == "ExitCol") 
-            inCollision = false;
-    }
 }
