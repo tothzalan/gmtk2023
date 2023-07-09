@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   busPrefab: {fileID: 2671498939207629766, guid: c7c0da5fabd1a254cacec52963b7b758, type: 3}
-  playerPrefab: {fileID: 0}
+  playerPrefab: {fileID: 8004166253386679528, guid: d95055125fe65374f972198f6511a6db, type: 3}
   spawnPos: {x: 0, y: 0}
 --- !u!1 &9171593866595387880
 GameObject:
