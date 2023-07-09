@@ -48,10 +48,13 @@ namespace PropScripts
             switch (gameManager.inventoryManager.UsingCurrently)
             {
                 case ResourceType.Blackout: BlackoutResource.GetInstance().UseResource();
+                    mapGenerator.storeBlackoutCount--;
                     break;
                 case ResourceType.Buoy: BuoyResource.GetInstance().UseResource();
+                    mapGenerator.buoyCount--;
                     break;
                 case ResourceType.Police: PoliceResource.GetInstance().UseResource();
+                    mapGenerator.policeCount--;
                     break;
             }
             gameManager.inventoryManager.UsingCurrently = ResourceType.None;
