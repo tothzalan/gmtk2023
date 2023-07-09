@@ -119,6 +119,7 @@ MonoBehaviour:
   InventoryManagerGameObject: {fileID: 4626809466035797359, guid: f09ebe9ed2a551da4af816ace2c5bd36, type: 3}
   inventoryManager: {fileID: 4928130175475976664, guid: f09ebe9ed2a551da4af816ace2c5bd36, type: 3}
   playerPos: {fileID: 0}
+  carPrefab: {fileID: 4801489714790769769, guid: 59ff5e85c2db7da46bcc9bbee38c09ad, type: 3}
 --- !u!114 &4149098813892110924
 MonoBehaviour:
   m_ObjectHideFlags: 0
