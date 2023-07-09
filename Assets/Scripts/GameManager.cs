@@ -9,10 +9,13 @@ public class GameManager : MonoBehaviour
     int timeout;
 
     public bool isPaused;
-    private int money;
+    [SerializeField]
+    private int money = 50;
     public int Money { get { return money; } }
 
-    private int toxicity;
+    [SerializeField]
+    private int toxicity = 50;
+
     public int Toxicity { get { return toxicity; } }
 
     private int ctl = 0;
@@ -69,6 +72,7 @@ public class GameManager : MonoBehaviour
         if (dead)
         {
             deathScreenScript.Death();
+            Time.timeScale = 0f;
             return;
         }
         ctl++;
