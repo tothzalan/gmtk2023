@@ -7,22 +7,15 @@ public class PoliceResource : Resource
 {
     private static PoliceResource instance;
 
-    public PoliceResource(int numberOwned) : base(numberOwned) 
+    public PoliceResource(int numberOwned = 1) : base(numberOwned) 
     {
     }
 
     public static PoliceResource GetInstance()
     {
-        if(instance == null)
-            throw new InvalidOperationException("You have to call the Init method first");
-        return instance;
-    }
-
-    public static PoliceResource Init(int numberOwned)
-    {
         if (instance != null)
             return instance;
-        instance = new PoliceResource(numberOwned);
+        instance = new PoliceResource();
         return instance;
     }
 

@@ -24,13 +24,13 @@ public class InventoryItemHandler : MonoBehaviour
         switch(resourceType)
         {
             case ResourceType.Buoy:
-                resource = BuoyResource.Init(5);
+                resource = BuoyResource.GetInstance();
                 break;
             case ResourceType.Police:
-                resource = PoliceResource.Init(1);
+                resource = PoliceResource.GetInstance();
                 break;
             case ResourceType.Blackout:
-                resource = BlackoutResource.Init(10);
+                resource = BlackoutResource.GetInstance();
                 break;
         }
         amountText = GetComponentsInChildren<TextMeshProUGUI>()[0];

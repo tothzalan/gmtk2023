@@ -7,22 +7,15 @@ public class BlackoutResource : Resource
 {
     private static BlackoutResource instance;
 
-    public BlackoutResource(int numberOwned) : base(numberOwned) 
+    public BlackoutResource(int numberOwned = 10) : base(numberOwned) 
     {
     }
 
     public static BlackoutResource GetInstance()
     {
-        if(instance == null)
-            throw new InvalidOperationException("You have to call the Init method first");
-        return instance;
-    }
-
-    public static BlackoutResource Init(int numberOwned)
-    {
         if (instance != null)
             return instance;
-        instance = new BlackoutResource(numberOwned);
+        instance = new BlackoutResource();
         return instance;
     }
 

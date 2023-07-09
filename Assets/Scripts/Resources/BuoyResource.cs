@@ -7,22 +7,15 @@ public class BuoyResource : Resource
 {
     private static BuoyResource instance;
 
-    public BuoyResource(int numberOwned) : base(numberOwned) 
+    public BuoyResource(int numberOwned = 5) : base(numberOwned) 
     {
     }
 
     public static BuoyResource GetInstance()
     {
-        if(instance == null)
-            throw new InvalidOperationException("You have to call the Init method first");
-        return instance;
-    }
-
-    public static BuoyResource Init(int numberOwned)
-    {
         if (instance != null)
             return instance;
-        instance = new BuoyResource(numberOwned);
+        instance = new BuoyResource();
         return instance;
     }
 
