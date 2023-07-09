@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    int lifetime;
+    int timeout;
+
     public bool isPaused;
     private int money;
     public int Money { get { return money; } }
@@ -27,14 +30,22 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private GameObject InventoryManagerGameObject;
+    private GameObject playerPrefab;
     public InventoryManager inventoryManager;
     public Transform playerPos;
+
+    [SerializeField]
+    public GameObject carPrefab;
 
     // Start is called before the first frame update
     void Start() // This should only exist when the actual game loads, not on menu
     {
         inventoryManager = InventoryManagerGameObject.GetComponent<InventoryManager>();
         playerPos = GameObject.FindWithTag("Player").transform;
+        playerPrefab = GameObject.FindWithTag("Player");        
+        
+        lifetime = 0;
+        timeout = 0;
     }
 
     private double ScoreMultiplier => (double)score / 100; // score reward/punishment should go up according
@@ -56,8 +67,21 @@ public class GameManager : MonoBehaviour
             AddScore(2); // score per sec here
             ctl = 0;
         }
+
+        SpawnCar();
     }
 
+    public void SpawnCar(){
+        Vector3 randomSpawnPoint = new Vector3(playerPrefab.transform.position.x-30.0f, UnityEngine.Random.Range(-1,1) , 0);
+        if(timeout != 0){
+            timeout--;
+        }
+        if(timeout == 0 && UnityEngine.Random.Range(0,3000) == 1){
+            Instantiate(carPrefab, randomSpawnPoint, Quaternion.identity);
+            timeout = 720;
+        }
+    }
+    
     public void EndBlackOut()
     {
         IsBlackOut = false;

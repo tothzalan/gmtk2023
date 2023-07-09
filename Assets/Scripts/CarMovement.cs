@@ -20,22 +20,13 @@ public class CarMovement : MonoBehaviour
         rigidBody = gameObject.GetComponent<Rigidbody2D>();
         playerPrefab = GameObject.FindWithTag("Player");
         carPrefab = GameObject.FindWithTag("Car");
-        timeout = 720;
         lifetime = 0;
     }
 
     void Update(){
-        Vector3 randomSpawnPoint = new Vector3(playerPrefab.transform.position.x-30.0f, Random.Range(-1,1),0);
-        if(timeout != 0){
-            timeout--;
-        }
-        if(timeout == 0 && Random.Range(0, 3000) == 1){
-            Instantiate(carPrefab, randomSpawnPoint, Quaternion.identity);
-            timeout = 720;
-        }
         lifetime++;
-        if(lifetime == 5000){
-            Destroy(carPrefab);
+        if(lifetime == 15000){
+            Destroy(gameObject);
         }
     }
     
