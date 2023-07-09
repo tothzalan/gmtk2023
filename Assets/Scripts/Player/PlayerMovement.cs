@@ -39,5 +39,9 @@ public class PlayerMovement : MonoBehaviour
             rigidBody.velocity = new Vector2(speed, 0.0f);
         }
     }
+
+    public float Speed(){
+        return speed;
+    }
     
 }
