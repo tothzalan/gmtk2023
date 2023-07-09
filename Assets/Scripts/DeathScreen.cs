@@ -45,5 +45,6 @@ public class DeathScreen : MonoBehaviour
     public void ActivateBackButton()
     {
         backToMenuBtn.SetActive(true);
+        Time.timeScale = 0f;
     }
 }
