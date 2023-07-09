@@ -882,11 +882,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 906470152135986890, guid: d95055125fe65374f972198f6511a6db, type: 3}
       propertyPath: m_SortingLayer
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 906470152135986890, guid: d95055125fe65374f972198f6511a6db, type: 3}
       propertyPath: m_SortingLayerID
-      value: 2049294345
+      value: 850722047
       objectReference: {fileID: 0}
     - target: {fileID: 5500966078413544527, guid: d95055125fe65374f972198f6511a6db, type: 3}
       propertyPath: animation
@@ -974,6 +974,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3294999412608026938, guid: b6a58dbeec0fadd4a8a600b389f57f2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7814229306520385501, guid: b6a58dbeec0fadd4a8a600b389f57f2c, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
