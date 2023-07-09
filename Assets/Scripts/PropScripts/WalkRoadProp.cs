@@ -15,8 +15,8 @@ namespace PropScripts
 
         public override void AttemptNeutralize()
         {
-            CollectibleBuoy bo = Instantiate(buoy, new Vector3(transform.position.x - 2, transform.position.y, -1),
-                new Quaternion(0, 0, 0, 0)).GetComponent<CollectibleBuoy>();
+            BuoyProp bo = Instantiate(buoy, new Vector3(transform.position.x - 2, transform.position.y, -1),
+                new Quaternion(0, 0, 0, 0)).GetComponent<BuoyProp>();
             
             bo.SetAsPlayerPlaced();
         }

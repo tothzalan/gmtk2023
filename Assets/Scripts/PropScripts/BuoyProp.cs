@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace PropScripts
 {
-    public class CollectibleBuoy : AbstractProp
+    public class BuoyProp : AbstractProp
     {
         [NonSerialized]
         public bool isPlacedByPlayer;
