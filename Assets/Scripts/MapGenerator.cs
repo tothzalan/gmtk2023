@@ -21,6 +21,7 @@ public class MapGenerator : MonoBehaviour
     /// 9. walk on road (timed car coming)
     /// 10. wet floor
     /// 11. beer
+    /// 12. car spot
     /// </summary>
     [SerializeField]
     private List<GameObject> interestProps;
@@ -207,6 +208,13 @@ public class MapGenerator : MonoBehaviour
             sum++;
         }
 
+        d++;
+        if (pointInterest.carSpot)
+        {
+            ch[d] = chances.car;
+            sum++;
+        }
+
         double chance = rand.NextDouble() * sum;
 
         for (int i = 0; i < ch.Length; i++)
@@ -248,4 +256,6 @@ public class InterestSpawnChanceMap
     public double wetFloor;
     [Range(0, 1)] 
     public double beer;
+    [Range(0, 1)] 
+    public double car;
 }

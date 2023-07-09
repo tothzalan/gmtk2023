@@ -8,6 +8,7 @@ namespace PropScripts
         [NonSerialized]
         public bool isPlacedByPlayer;
         private Animator anim;
+        private Collider2D collider;
         private static readonly int PickedUp = Animator.StringToHash("PickedUp");
 
         public override bool CanInteract()
@@ -17,6 +18,13 @@ namespace PropScripts
 
         protected override void TriggerStart(){
             anim = gameObject.GetComponent<Animator>();
+            collider = gameObject.GetComponent<BoxCollider2D>();
+        }
+
+        public void SetAsPlayerPlaced()
+        {
+            isPlacedByPlayer = true;
+            collider.isTrigger = false;
         }
 
         public override void AttemptNeutralize()
