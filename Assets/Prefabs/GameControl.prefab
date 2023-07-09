@@ -147,19 +147,20 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 7376368150902203947, guid: 57a83aaf5d6920142b7730c53f6c0145, type: 3}
+  - {fileID: 2490164630360580258, guid: c4afd89f02e90f84793c96e0c60aebfa, type: 3}
   chances:
     douyCollectible: 1
     policeCollectible: 1
     storeBlackoutCollectible: 1
     dealer: 1
-    mugger: 0
+    mugger: 1
     pub: 1
     kebab: 1
     trafficLight: 1
     busStation: 1
     walkOnRoad: 1
     wetFloor: 1
-    blackout: 0.2290000021457672
+    beer: 0.777999997138977
   policeCount: 0
   buoyCount: 0
   storeBlackoutCount: 0

@@ -22,11 +22,7 @@ namespace PropScripts
 
         public override bool CanInteract()
         {
-            return !hasChanged;
-        }
-
-        private void OnTriggerEnter2D(Collider2D other)
-        {
+            return !hasChanged || (!hasChanged && animator.GetBool(IsOpen) && gameManager.inventoryManager.UsingCurrently == ResourceType.Blackout);
         }
 
         public override void AttemptNeutralize()
@@ -38,10 +34,6 @@ namespace PropScripts
 
             if (!isOpen)
                 animator.SetBool(IsOpen, true);
-            else /*Requires access to resource use*/
-            {
-                
-            }
         }
 
         public override void ExecuteInteraction()

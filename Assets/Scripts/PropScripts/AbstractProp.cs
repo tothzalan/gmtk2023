@@ -1,4 +1,5 @@
 using System;
+using Enums;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -36,14 +37,24 @@ namespace PropScripts
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.gameObject.CompareTag("PlatformDestroy"))
+            if (other.CompareTag("PlatformDestroy"))
             {
                 Destroy(gameObject);
             }
         }
 
-        public void FinalizeNeutralization()
+        public virtual void FinalizeNeutralization()
         {
+            switch (gameManager.inventoryManager.UsingCurrently)
+            {
+                case ResourceType.Blackout: BlackoutResource.GetInstance().UseResource();
+                    break;
+                case ResourceType.Buoy: BuoyResource.GetInstance().UseResource();
+                    break;
+                case ResourceType.Police: PoliceResource.GetInstance().UseResource();
+                    break;
+            }
+            gameManager.inventoryManager.UsingCurrently = ResourceType.None;
             hasNeutralized = true;
         }
     
