@@ -40,7 +40,7 @@ public class BusStopScript : AbstractProp
     public override void AttemptNeutralize(){
         //TODO: Regenerate Map
         GameObject bus = Instantiate(busPrefab) as GameObject;
-        bus.transform.position = new Vector2((spawnPos.x-15), spawnPos.y);
+        bus.transform.position = new Vector2((spawnPos.x-15), spawnPos.y-1);
         
     }
 
