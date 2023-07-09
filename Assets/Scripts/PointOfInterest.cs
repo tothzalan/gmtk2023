@@ -10,12 +10,13 @@ public class PointOfInterest : MonoBehaviour
     public bool carSpot; // buoy neut
     public bool kebabSpot; // blackout neut (if opened)
     public bool pubSpot;
-    public bool blackOutSpot;
     public bool wetFloorSpot;
     public bool busStationSpot;
     public bool walkOnRoadSpot; // walks on the road and has to stop traffic with buoy
+    public bool beerSpot;
     
     public bool collectiblePoliceSpot;
     public bool collectibleBuoySpot;
     public bool collectibleStoreBlackout;
+    
 }
