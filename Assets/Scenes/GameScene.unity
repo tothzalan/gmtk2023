@@ -215,10 +215,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7205622072957946933, guid: 525cbe223dcec7b46b630f59ddc2584b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7205622072957946933, guid: 525cbe223dcec7b46b630f59ddc2584b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7205622072957946933, guid: 525cbe223dcec7b46b630f59ddc2584b, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7205622072957946933, guid: 525cbe223dcec7b46b630f59ddc2584b, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7205622072957946933, guid: 525cbe223dcec7b46b630f59ddc2584b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -992
+      objectReference: {fileID: 0}
+    - target: {fileID: 7205622072957946933, guid: 525cbe223dcec7b46b630f59ddc2584b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -516
+      objectReference: {fileID: 0}
+    - target: {fileID: 7902790076560270306, guid: 525cbe223dcec7b46b630f59ddc2584b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8010209602049672297, guid: 525cbe223dcec7b46b630f59ddc2584b, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 966418406}
+    - target: {fileID: 8595273588426137955, guid: 525cbe223dcec7b46b630f59ddc2584b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8934052304948984302, guid: 525cbe223dcec7b46b630f59ddc2584b, type: 3}
       propertyPath: m_Name
       value: PauseMenu
@@ -451,6 +483,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3568183193047484463, guid: 94745b9c6e6bec8ca8f339214f300bf0, type: 3}
       propertyPath: m_Name
+      value: UICanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3568183193047484463, guid: 94745b9c6e6bec8ca8f339214f300bf0, type: 3}
+      propertyPath: m_TagString
       value: UICanvas
       objectReference: {fileID: 0}
     - target: {fileID: 6402110485877721677, guid: 94745b9c6e6bec8ca8f339214f300bf0, type: 3}
