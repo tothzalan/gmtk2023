@@ -10,6 +10,7 @@ public class TrafficLight : AbstractProp
     {
         return true;
     }
+
     public override void AttemptNeutralize()
     {
         if(state == TrafficLightState.Green)
@@ -24,7 +25,7 @@ public class TrafficLight : AbstractProp
     public override int ScoreDifference { get { return 0; } }
 
 
-    public TrafficLightState state = TrafficLightState.Green;
+    private TrafficLightState state;
     private Color red = new Color(255, 0, 0);
     private Color green = new Color(0, 255, 0);
 
@@ -38,12 +39,16 @@ public class TrafficLight : AbstractProp
         rigidBody = gameObject.GetComponent<Rigidbody2D>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         boxCollider = gameObject.GetComponent<BoxCollider2D>();
+        state = RandomStartState();
         ChangeState();
     }
 
-    void OnMouseDown()
+    TrafficLightState RandomStartState()
     {
-        AttemptNeutralize();
+        var rnd = Random.Range(0,10);
+        if(rnd <= 7)
+            return TrafficLightState.Green;
+        return TrafficLightState.Red;
     }
 
     void ChangeState()
