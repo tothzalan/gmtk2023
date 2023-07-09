@@ -26,7 +26,7 @@ public class DeathScreen : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void ActivateBackButton()
