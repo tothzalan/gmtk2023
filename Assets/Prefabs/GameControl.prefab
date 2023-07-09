@@ -155,17 +155,17 @@ MonoBehaviour:
   - {fileID: 2490164630360580258, guid: c4afd89f02e90f84793c96e0c60aebfa, type: 3}
   - {fileID: 4410198211010106385, guid: e95b5428ee545e149935f6a692126b49, type: 3}
   chances:
-    douyCollectible: 1
-    policeCollectible: 1
-    storeBlackoutCollectible: 1
-    dealer: 1
-    mugger: 1
+    douyCollectible: 0.5
+    policeCollectible: 0.699999988079071
+    storeBlackoutCollectible: 0.699999988079071
+    dealer: 0.699999988079071
+    mugger: 0.699999988079071
     pub: 0.3499999940395355
     kebab: 0.3499999940395355
-    trafficLight: 1
+    trafficLight: 0.699999988079071
     busStation: 1
     walkOnRoad: 1
-    wetFloor: 1
+    wetFloor: 0.5
     beer: 0.7839999794960022
     car: 0
   policeCount: 0
