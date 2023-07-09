@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 8662809021888391269}
   - component: {fileID: 7019742354845611949}
   - component: {fileID: 2099231731200873541}
-  - component: {fileID: 405364161355132767}
   - component: {fileID: 1114851146021930933}
   m_Layer: 0
   m_Name: Square
@@ -106,7 +105,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2049294345
-  m_SortingLayer: 3
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.4862745}
@@ -164,33 +163,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &405364161355132767
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6434029622872536812}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &1114851146021930933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,4 +175,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d91ba4befe3b3783bf0c01d30e3acb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 0
