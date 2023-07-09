@@ -27,7 +27,7 @@ public class InventoryItemHandler : MonoBehaviour
                 resource = BuoyResource.Init(5);
                 break;
             case ResourceType.Police:
-                resource = PoliceResource.Init(1);
+                resource = PoliceResource.Init(0);
                 break;
             case ResourceType.Blackout:
                 resource = BlackoutResource.Init(10);
@@ -42,7 +42,6 @@ public class InventoryItemHandler : MonoBehaviour
         if( resource.CanUseResource()
             && inventoryManager.UsingCurrently == ResourceType.None)
         {
-            resource.UseResource();
             amountText.text = resource.NumberOwned.ToString();
             inventoryManager.UsingCurrently = resourceType;
         }
